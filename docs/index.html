@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -290,6 +325,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#pipeline-architecture" id="toc-pipeline-architecture" class="nav-link" data-scroll-target="#pipeline-architecture">Pipeline Architecture</a></li>
   <li><a href="#ontology-definition" id="toc-ontology-definition" class="nav-link" data-scroll-target="#ontology-definition">Ontology Definition</a></li>
+  <li><a href="#graph-rag-query-engine" id="toc-graph-rag-query-engine" class="nav-link" data-scroll-target="#graph-rag-query-engine">🤖 Graph RAG Query Engine</a>
+  <ul class="collapse">
+  <li><a href="#how-to-run-graph-rag-locally" id="toc-how-to-run-graph-rag-locally" class="nav-link" data-scroll-target="#how-to-run-graph-rag-locally">How to Run Graph RAG Locally</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -352,9 +391,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const styledNodes = data.nodes.map(node => {
         const isCorp = node.group === 'Corporation';
         return {
-          id: node.id,
-          label: node.label,
-          group: node.group,
+          ...node, // Preserve CIK, SIC, stateOfIncorporation, businessAddress, jurisdiction, etc.
           shape: 'dot',
           size: isCorp ? 28 : 16,
           color: {
@@ -425,12 +462,27 @@ document.addEventListener("DOMContentLoaded", function() {
           const clickedNodeId = params.nodes[0];
           const nodeData = styledNodes.find(n => n.id === clickedNodeId);
           
-          inspector.innerHTML = `
-            <strong>URI:</strong> <a href="${nodeData.id}" target="_blank" style="color: #00b4d8;">${nodeData.id}</a><br>
+          let detailsHtml = `
+            <strong>URI:</strong> <a href="${nodeData.id}" target="_blank" style="color: #00b4d8; text-decoration: none;">${nodeData.id}</a><br>
             <strong>Name:</strong> ${nodeData.label}<br>
             <strong>OWL Class:</strong> sec:${nodeData.group}<br>
-            <strong>RDF Type:</strong> http://enterprise.org/ontology/sec#${nodeData.group}
           `;
+          
+          if (nodeData.group === 'Corporation') {
+            const formattedAddress = (nodeData.businessAddress || "").replace(/\n/g, ", ");
+            detailsHtml += `
+              <strong>CIK:</strong> ${nodeData.cik || 'Unknown'}<br>
+              <strong>SIC Code:</strong> ${nodeData.sic || 'Unknown'} (${nodeData.sicDescription || 'Unknown'})<br>
+              <strong>Incorporated In:</strong> ${nodeData.stateOfIncorporation || 'Unknown'}<br>
+              <strong>Business Address:</strong> ${formattedAddress}
+            `;
+          } else {
+            detailsHtml += `
+              <strong>Jurisdiction:</strong> ${nodeData.jurisdiction || 'Unknown'}
+            `;
+          }
+          
+          inspector.innerHTML = detailsHtml;
         } else {
           inspector.innerHTML = `<span style="color: #888;">Select a node in the graph to inspect its OWL / RDF properties...</span>`;
         }
@@ -465,12 +517,27 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><strong>Functional Property</strong>: <code>sec:isOwnedBy</code> is defined as functional, ensuring a subsidiary has at most one parent company.</li>
 <li><strong>Classes</strong>:
 <ul>
-<li><code>sec:Corporation</code> for the parent entity (e.g., Goldman Sachs <code>GS</code>).</li>
+<li><code>sec:Corporation</code> for the parent entity (e.g., Goldman Sachs <code>GS</code>, Morgan Stanley <code>MS</code>, JPMorgan Chase <code>JPM</code>).</li>
 <li><code>sec:Subsidiary</code> for the subsidiary entities listed in the filing.</li>
 </ul></li>
 </ul>
+<hr>
+</section>
+<section id="graph-rag-query-engine" class="level2">
+<h2 class="anchored" data-anchor-id="graph-rag-query-engine">🤖 Graph RAG Query Engine</h2>
+<p>This project incorporates a standalone <strong>Graph Retrieval-Augmented Generation (Graph RAG)</strong> tool. It allows natural language questioning over the structured SEC EDGAR filing data, combining SPARQL graph traversal with LLM inference.</p>
+<section id="how-to-run-graph-rag-locally" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-run-graph-rag-locally">How to Run Graph RAG Locally</h3>
+<p>Ensure you have your Gemini API key configured in your terminal environment, then run the query tool:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Export your API key</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GEMINI_API_KEY</span><span class="op">=</span><span class="st">"your-gemini-api-key"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Run the Query Engine</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/graph_rag.py <span class="at">--query</span> <span class="st">"Which JPMorgan Chase subsidiaries are located in Germany?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The script will: 1. Load <a href="file:///Users/gabrielpham/.gemini/antigravity-ide/scratch/sec-knowledge-graph/data_graph.ttl">data_graph.ttl</a>. 2. Feed the relevant serialized Turtle graph context into the Gemini model. 3. Generate a highly accurate, grounded answer complete with URI citations.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
