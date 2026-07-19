@@ -6,6 +6,16 @@
       "group": "Corporation"
     },
     {
+      "id": "http://enterprise.org/ontology/sec#MS",
+      "label": "MORGAN STANLEY",
+      "group": "Corporation"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPM",
+      "label": "JPMORGAN CHASE & CO",
+      "group": "Corporation"
+    },
+    {
       "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
       "label": "The Goldman Sachs Group, Inc.",
       "group": "Subsidiary"
@@ -229,6 +239,206 @@
       "id": "http://enterprise.org/ontology/sec#BSCH_Global_LLC",
       "label": "BSCH Global LLC",
       "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Company",
+      "label": "Company",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley",
+      "label": "Morgan Stanley",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Management_LLC",
+      "label": "Morgan Stanley Capital Management, LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_LLC",
+      "label": "Morgan Stanley & Co. LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_NA",
+      "label": "Morgan Stanley Bank, N.A.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Domestic_Holdings_LLC",
+      "label": "Morgan Stanley Domestic Holdings, LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Group_Inc",
+      "label": "Morgan Stanley Capital Group Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Services_LLC",
+      "label": "Morgan Stanley Capital Services LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Inc",
+      "label": "Morgan Stanley Investment Management Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Private_Bank_National_Association",
+      "label": "Morgan Stanley Private Bank, National Association",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Smith_Barney_LLC",
+      "label": "Morgan Stanley Smith Barney LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Finance_LLC",
+      "label": "Morgan Stanley Finance LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Holdings_LLC",
+      "label": "Morgan Stanley Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Holdings_Inc",
+      "label": "Morgan Stanley International Holdings Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Japan_Holdings_Co_Ltd",
+      "label": "Morgan Stanley Japan Holdings Co., Ltd.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_MUFG_Securities_Co_Ltd",
+      "label": "Morgan Stanley MUFG Securities Co., Ltd.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Limited",
+      "label": "Morgan Stanley International Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Europe_SE",
+      "label": "Morgan Stanley Europe SE",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_AG",
+      "label": "Morgan Stanley Bank AG",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investments_UK",
+      "label": "Morgan Stanley Investments (UK)",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_International_plc",
+      "label": "Morgan Stanley & Co. International plc",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Limited",
+      "label": "Morgan Stanley Investment Management Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association",
+      "label": "JPMorgan Chase Bank, National Association",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Paymentech_LLC",
+      "label": "Paymentech, LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited",
+      "label": "J.P. Morgan International Finance Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd",
+      "label": "JPMorgan Securities Japan Co., Ltd.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited",
+      "label": "J.P. Morgan Capital Holdings Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc",
+      "label": "J.P. Morgan Securities plc",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_SE",
+      "label": "J.P. Morgan SE",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC",
+      "label": "JPMorgan Chase Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited",
+      "label": "J.P. Morgan Services India Private Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc",
+      "label": "JPMorgan Asset Management Holdings Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc",
+      "label": "JPMorgan Distribution Services, Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited",
+      "label": "JPMorgan Asset Management International Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited",
+      "label": "JPMorgan Asset Management (UK) Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl",
+      "label": "JPMorgan Asset Management Holdings (Luxembourg) S.\u00e0 r.l.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl",
+      "label": "JPMorgan Asset Management (Europe) S.\u00e0 r.l.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc",
+      "label": "J.P. Morgan Investment Management Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc",
+      "label": "J.P. Morgan Broker-Dealer Holdings Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC",
+      "label": "J.P. Morgan Securities LLC",
+      "group": "Subsidiary"
     }
   ],
   "edges": [
@@ -411,6 +621,166 @@
     {
       "from": "http://enterprise.org/ontology/sec#GS",
       "to": "http://enterprise.org/ontology/sec#BSCH_Global_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Management_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_NA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Domestic_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Group_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Services_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Private_Bank_National_Association"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Smith_Barney_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Finance_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Japan_Holdings_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_MUFG_Securities_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Europe_SE"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_AG"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investments_UK"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_International_plc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Paymentech_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_SE"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC"
     }
   ]
 }

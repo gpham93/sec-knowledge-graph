@@ -36,8 +36,9 @@ def fetch_sec_filings(ticker_symbol):
 # ==========================================
 # 2. PROBABILISTIC ENTITY RESOLUTION
 # ==========================================
-def deduplicate_subsidiary_names(subsidiaries):
-    raw_names = [sub.name for sub in subsidiaries]
+def deduplicate_subsidiary_names(raw_names):
+    # Ensure raw_names contains unique strings
+    raw_names = list(set(raw_names))
     if len(raw_names) <= 1:
         return {name: name for name in raw_names}
 
@@ -100,43 +101,63 @@ def main():
     g.add((SEC.ownsSubsidiary, OWL.inverseOf, SEC.isOwnedBy))
     g.add((SEC.isOwnedBy, RDF.type, OWL.FunctionalProperty))
 
-    ticker = "GS"
-    
-    # Fetch filings with retries
-    company, latest_10k = fetch_sec_filings(ticker)
+    # Pull data for multiple top-tier financial parents
+    tickers = ["GS", "MS", "JPM"]
+    all_subsidiaries = []  # List of tuples (parent_uri, sub_name)
+    parent_info = {}       # parent_uri -> company_name
 
-    parent_uri = URIRef(SEC + ticker)
-    g.add((parent_uri, RDF.type, SEC.Corporation))
-    g.add((parent_uri, SEC.hasName, Literal(company.name)))
+    for ticker in tickers:
+        print(f"Fetching filings for {ticker}...")
+        try:
+            company, latest_10k = fetch_sec_filings(ticker)
+            parent_uri = URIRef(SEC + ticker)
+            parent_info[parent_uri] = company.name
+            
+            for sub in latest_10k.subsidiaries:
+                all_subsidiaries.append((parent_uri, sub.name))
+        except Exception as e:
+            print(f"Error fetching filings for {ticker}: {e}")
 
-    # Deduplicate raw subsidiary names using Splink
-    rep_map = deduplicate_subsidiary_names(latest_10k.subsidiaries)
+    # Collect all raw subsidiary names for cross-entity deduplication
+    raw_sub_names = [sub_name for _, sub_name in all_subsidiaries]
+    rep_map = deduplicate_subsidiary_names(raw_sub_names)
 
     # Setup JSON graph structure for visualization
-    nodes = [{"id": str(parent_uri), "label": company.name, "group": "Corporation"}]
+    nodes = []
     links = []
-    added_subs = set()
+    
+    # Add parent corporation nodes
+    for parent_uri, parent_name in parent_info.items():
+        g.add((parent_uri, RDF.type, SEC.Corporation))
+        g.add((parent_uri, SEC.hasName, Literal(parent_name)))
+        nodes.append({"id": str(parent_uri), "label": parent_name, "group": "Corporation"})
 
-    for sub in latest_10k.subsidiaries:
+    added_subs = set()
+    added_edges = set()
+
+    for parent_uri, sub_name in all_subsidiaries:
         # Resolve names to their cluster's representative name
-        resolved_name = rep_map.get(sub.name, sub.name)
+        resolved_name = rep_map.get(sub_name, sub_name)
         
         # URI normalization based on resolved name
         clean_name = re.sub(r'[^a-zA-Z0-9_]', '', resolved_name.replace(" ", "_"))
         sub_uri = URIRef(SEC + clean_name)
         
-        # Only add unique nodes to the RDF graph
+        # Add the subsidiary node to the RDF graph if not already added
         if sub_uri not in added_subs:
             g.add((sub_uri, RDF.type, SEC.Subsidiary))
             g.add((sub_uri, SEC.hasName, Literal(resolved_name)))
-            
-            # Bidirectional modeling (important for SHACL verification)
-            g.add((parent_uri, SEC.ownsSubsidiary, sub_uri))
-            g.add((sub_uri, SEC.isOwnedBy, parent_uri))
-            
             nodes.append({"id": str(sub_uri), "label": resolved_name, "group": "Subsidiary"})
-            links.append({"from": str(parent_uri), "to": str(sub_uri)})
             added_subs.add(sub_uri)
+            
+        # Add the parent-subsidiary relationships (bi-directional)
+        g.add((parent_uri, SEC.ownsSubsidiary, sub_uri))
+        g.add((sub_uri, SEC.isOwnedBy, parent_uri))
+        
+        edge_key = (str(parent_uri), str(sub_uri))
+        if edge_key not in added_edges:
+            links.append({"from": str(parent_uri), "to": str(sub_uri)})
+            added_edges.add(edge_key)
 
     # ==========================================
     # 3. SEMANTIC SHACL VALIDATION
