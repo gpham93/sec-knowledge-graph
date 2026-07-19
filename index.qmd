@@ -6,6 +6,7 @@ format:
     include-in-header:
       - text: |
           <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 ---
 
 Welcome to the **SEC Corporate Subsidiary Knowledge Graph** portfolio project.
@@ -154,13 +155,10 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 🤖 Live Graph RAG Chatbot
 Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini's answers in real time.
 
-::: {.graph-card}
-### Graph RAG AI Copilot
-<div class="d-flex justify-content-between align-items-center mb-3">
-  <div>
-    <span class="badge-custom badge-corp">Grounded in SEC Graph</span>
-  </div>
-  <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif;">⚙️ Configure API Key</button>
+::: {.chat-container}
+<div class="chat-header">
+  <span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;">Grounded in SEC Graph</span>
+  <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;">⚙️ API Key</button>
 </div>
 
 <div id="key-panel" class="api-key-panel d-none">
@@ -169,7 +167,7 @@ Ask questions about the corporate hierarchies directly in your browser. This cha
     <input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy...">
     <button id="save-key-btn" class="btn btn-sm btn-primary">Save Key</button>
   </div>
-  <small class="text-muted">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
+  <small class="text-muted" style="font-size: 0.75rem;">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
 </div>
 
 <div id="chat-log" class="chat-log">
@@ -178,18 +176,22 @@ Ask questions about the corporate hierarchies directly in your browser. This cha
   </div>
 </div>
 
+<div class="chat-input-area">
+  <input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
+  <button id="send-chat-btn" class="chat-send-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+    </svg>
+  </button>
+</div>
+:::
+
 <div class="chat-chips">
   <div class="chip" onclick="sendSuggestion('What is Morgan Stanley\'s CIK and state of incorporation?')">Morgan Stanley Info</div>
   <div class="chip" onclick="sendSuggestion('Which JPMorgan Chase subsidiaries are located in Germany?')">JPM Germany Subs</div>
   <div class="chip" onclick="sendSuggestion('Are there any duplicate or clustered subsidiaries?')">Deduplication Info</div>
   <div class="chip" onclick="sendSuggestion('What is Goldman Sachs\' business address?')">GS Address</div>
 </div>
-
-<div class="input-group">
-  <input type="text" id="chat-input" class="form-control" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
-  <button id="send-chat-btn" class="btn btn-primary">Send</button>
-</div>
-:::
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -257,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function appendMessage(sender, text) {
     const msg = document.createElement('div');
     msg.className = `chat-message ${sender}`;
-    msg.innerHTML = text.replace(/\n/g, '<br>');
+    msg.innerHTML = text;
     chatLog.appendChild(msg);
     chatLog.scrollTop = chatLog.scrollHeight;
     return msg;
@@ -271,7 +273,14 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const botBubble = appendMessage('bot', 'Thinking...');
+    // Append bot bubble with typing indicator
+    const botBubble = appendMessage('bot', `
+      <div class="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    `);
 
     const prompt = `
 You are an expert corporate intelligence assistant. You have access to a verified facts database derived from SEC EDGAR filings.
@@ -308,7 +317,8 @@ Rules:
       } catch (err) {
         answer = "Could not parse response from Gemini API.";
       }
-      botBubble.innerHTML = answer.replace(/\n/g, '<br>');
+      // Render markdown response dynamically using marked
+      botBubble.innerHTML = marked.parse(answer);
       chatLog.scrollTop = chatLog.scrollHeight;
     })
     .catch(err => {
@@ -323,7 +333,7 @@ Rules:
     const text = chatInput.value.trim();
     if (!text) return;
     
-    appendMessage('user', text);
+    appendMessage('user', text.replace(/\n/g, '<br>'));
     chatInput.value = "";
     
     queryGemini(text);
@@ -336,7 +346,7 @@ Rules:
 
   // Bind to window to allow chip triggers
   window.sendSuggestion = function(text) {
-    appendMessage('user', text);
+    appendMessage('user', text.replace(/\n/g, '<br>'));
     queryGemini(text);
   };
 });
