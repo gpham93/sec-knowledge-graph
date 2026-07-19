@@ -190,4 +190,3 @@ sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
 sec:isOwnedBy a owl:FunctionalProperty,
         owl:ObjectProperty .
 
-

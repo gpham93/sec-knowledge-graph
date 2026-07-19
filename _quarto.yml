@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - data_graph.ttl
+    - data_graph.json
 
 website:
   title: "SEC Subsidiary Knowledge Graph"
@@ -8,6 +11,9 @@ website:
     left:
       - href: index.qmd
         text: Overview
+      - href: ontology.qmd
+        text: Ontology Explorer
+
 
 format:
   html:

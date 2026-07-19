@@ -1,4 +1,93 @@
-/* Custom styles for SEC Subsidiary Knowledge Graph website */
+/* Import modern typography from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* Apply typography */
 body {
-  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Card & Glassmorphism design */
+.graph-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 30px 0;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light mode overrides for the glassmorphism card */
+body:not(.quarto-dark) .graph-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.03);
+}
+
+.graph-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body:not(.quarto-dark) .graph-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Graph canvas container */
+#network-canvas {
+  width: 100%;
+  height: 550px;
+  border-radius: 12px;
+  background-color: rgba(15, 15, 25, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  margin-top: 15px;
+}
+
+body:not(.quarto-dark) #network-canvas {
+  background-color: rgba(240, 242, 245, 0.6);
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+/* Custom interactive elements */
+.badge-custom {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.badge-corp {
+  background-color: rgba(212, 175, 55, 0.12);
+  color: #e5c158;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.badge-sub {
+  background-color: rgba(0, 180, 216, 0.12);
+  color: #00b4d8;
+  border: 1px solid rgba(0, 180, 216, 0.25);
+}
+
+/* Micro-animations */
+.nav-link {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-link:hover {
+  transform: translateY(-1px);
 }

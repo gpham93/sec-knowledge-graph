@@ -1,0 +1,14 @@
+---
+title: "Ontology Explorer"
+subtitle: "RDF Turtle Representation"
+---
+
+The SEC Corporate Subsidiary Knowledge Graph represents corporate entities and relationship assertions as RDF triples. Below is the full serialized knowledge graph in Turtle (`.ttl`) format, governed by OWL axioms.
+
+## RDF Turtle Serialization
+
+You can inspect the assertions, inverse properties, and class definitions below:
+
+```turtle
+{{< include data_graph.ttl >}}
+```

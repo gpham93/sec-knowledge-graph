@@ -1,0 +1,416 @@
+{
+  "nodes": [
+    {
+      "id": "http://enterprise.org/ontology/sec#GS",
+      "label": "GOLDMAN SACHS GROUP INC",
+      "group": "Corporation"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
+      "label": "The Goldman Sachs Group, Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs__Co_LLC",
+      "label": "Goldman Sachs & Co. LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Funding_LLC",
+      "label": "Goldman Sachs Funding LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GS_European_Funding_I_SA_RL_LLC",
+      "label": "GS European Funding I S.A R.L. LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Murray_Street_Corporation",
+      "label": "Murray Street Corporation",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado",
+      "label": "Sphere Fundo De Investimento Multimercado - Investimento No Exterior Credito Privado",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GS_Financial_Services_II_LLC",
+      "label": "GS Financial Services II, LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_I_CO",
+      "label": "Goldman Sachs Global Funding I, CO.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_II_LTD",
+      "label": "Goldman Sachs Global Funding II LTD",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_III_Limited",
+      "label": "Goldman Sachs Global Funding III Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_LLC",
+      "label": "Goldman Sachs (UK) L.L.C.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_Funding_Limited",
+      "label": "Goldman Sachs UK Funding Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Group_UK_Limited",
+      "label": "Goldman Sachs Group UK Limited",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_International_Bank",
+      "label": "Goldman Sachs International Bank",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_International",
+      "label": "Goldman Sachs International",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#J_Aron__Company_LLC",
+      "label": "J. Aron & Company LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GSAM_Holdings_LLC",
+      "label": "GSAM Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_LP",
+      "label": "Goldman Sachs Asset Management, L.P.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd",
+      "label": "Goldman Sachs Asset Management UK Holdings I Ltd",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd",
+      "label": "Goldman Sachs Asset Management UK Holdings II Ltd",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_I_BV",
+      "label": "Goldman Sachs Asset Management Holdings I B.V.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_II_BV",
+      "label": "Goldman Sachs Asset Management Holdings II B.V.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_BV",
+      "label": "Goldman Sachs Asset Management Holdings B.V.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_International_Holdings_BV",
+      "label": "Goldman Sachs Asset Management International Holdings B.V.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_BV",
+      "label": "Goldman Sachs Asset Management B.V.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asia_Corporate_Holdings_LLC",
+      "label": "Goldman Sachs (Asia) Corporate Holdings L.L.C.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Ltd",
+      "label": "Goldman Sachs (Japan) Ltd.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Co_Ltd",
+      "label": "Goldman Sachs Japan Co., Ltd.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GS_Lending_Partners_Holdings_LLC",
+      "label": "GS Lending Partners Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Lending_Partners_LLC",
+      "label": "Goldman Sachs Lending Partners LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_USA",
+      "label": "Goldman Sachs Bank USA",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_Europe_SE",
+      "label": "Goldman Sachs Bank Europe SE",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Mortgage_Company",
+      "label": "Goldman Sachs Mortgage Company",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GSSG_Holdings_LLC",
+      "label": "GSSG Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#ALQ_Holdings_Del_LLC",
+      "label": "ALQ Holdings (Del) LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GLQ_Nova_Global_Designated_Activity_Company",
+      "label": "GLQ Nova Global Designated Activity Company",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GLQ_International_Partners_LP",
+      "label": "GLQ International Partners LP",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GLQ_International_Holdings_Ltd",
+      "label": "GLQ International Holdings Ltd",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#GLQ_Holdings_UK_Ltd",
+      "label": "GLQ Holdings (UK) Ltd",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_LLC",
+      "label": "Goldman Sachs Non-US Americas Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_II_LLC",
+      "label": "Goldman Sachs Non-US Americas Holdings II LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Holdings_LLC",
+      "label": "Goldman Sachs Canada Holdings LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Inc",
+      "label": "Goldman Sachs Canada Inc.",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Broad_Street_Principal_Investments_Superholdco_LLC",
+      "label": "Broad Street Principal Investments Superholdco LLC",
+      "group": "Subsidiary"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BSCH_Global_LLC",
+      "label": "BSCH Global LLC",
+      "group": "Subsidiary"
+    }
+  ],
+  "edges": [
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs__Co_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Funding_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GS_European_Funding_I_SA_RL_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Murray_Street_Corporation"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GS_Financial_Services_II_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_I_CO"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_II_LTD"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_III_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_Funding_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Group_UK_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_International_Bank"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_International"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#J_Aron__Company_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GSAM_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_LP"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_I_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_II_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_International_Holdings_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asia_Corporate_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GS_Lending_Partners_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Lending_Partners_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_USA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_Europe_SE"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Mortgage_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GSSG_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#ALQ_Holdings_Del_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GLQ_Nova_Global_Designated_Activity_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GLQ_International_Partners_LP"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GLQ_International_Holdings_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#GLQ_Holdings_UK_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_II_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Broad_Street_Principal_Investments_Superholdco_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#BSCH_Global_LLC"
+    }
+  ]
+}

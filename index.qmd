@@ -1,11 +1,142 @@
 ---
 title: "SEC Corporate Subsidiary Knowledge Graph"
 subtitle: "Automated Neuro-Symbolic Data Pipeline"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 ---
 
 Welcome to the **SEC Corporate Subsidiary Knowledge Graph** portfolio project.
 
 This repository hosts an automated neuro-symbolic data pipeline that extracts corporate subsidiary hierarchies from SEC EDGAR filings and maps them into a Web Ontology Language (OWL)-governed knowledge graph.
+
+## 🌐 Interactive Subsidiary Tree
+Explore the extracted corporate structure of Goldman Sachs and its subsidiaries. Drag to move, scroll to zoom, and click any node to inspect its ontology properties in the panel below.
+
+::: {.graph-card}
+### Goldman Sachs Group Inc. & Subsidiaries
+<div class="mb-3">
+  <span class="badge-custom badge-corp">Corporation</span>
+  <span class="badge-custom badge-sub">Subsidiary</span>
+</div>
+
+<div id="network-canvas"></div>
+
+<div id="inspector-panel" class="mt-3 p-3 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); font-family: monospace; font-size: 0.9em;">
+  <span style="color: #888;">Select a node in the graph to inspect its OWL / RDF properties...</span>
+</div>
+:::
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.getElementById('network-canvas');
+  const inspector = document.getElementById('inspector-panel');
+  
+  // Detect theme colors
+  const isDark = document.body.classList.contains('quarto-dark') || 
+                 window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  const textColor = isDark ? '#e2e8f0' : '#1e293b';
+  
+  fetch('data_graph.json')
+    .then(response => response.json())
+    .then(data => {
+      // Style the nodes dynamically based on group
+      const styledNodes = data.nodes.map(node => {
+        const isCorp = node.group === 'Corporation';
+        return {
+          id: node.id,
+          label: node.label,
+          group: node.group,
+          shape: 'dot',
+          size: isCorp ? 28 : 16,
+          color: {
+            background: isCorp ? '#e5c158' : '#00b4d8',
+            border: isCorp ? '#d4af37' : '#0077b6',
+            highlight: {
+              background: isCorp ? '#f4d068' : '#90e0ef',
+              border: isCorp ? '#e5c158' : '#00b4d8'
+            }
+          },
+          font: {
+            color: textColor,
+            size: isCorp ? 15 : 12,
+            face: 'Outfit, sans-serif'
+          },
+          borderWidth: 2
+        };
+      });
+
+      const edges = data.edges.map(edge => {
+        return {
+          from: edge.from,
+          to: edge.to,
+          color: isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)',
+          arrows: {
+            to: { enabled: true, scaleFactor: 0.5 }
+          },
+          width: 1.5
+        };
+      });
+
+      const graphData = {
+        nodes: new vis.DataSet(styledNodes),
+        edges: new vis.DataSet(edges)
+      };
+
+      const options = {
+        nodes: {
+          scaling: {
+            label: {
+              enabled: true
+            }
+          }
+        },
+        physics: {
+          stabilization: {
+            enabled: true,
+            iterations: 150
+          },
+          barnesHut: {
+            gravitationalConstant: -3000,
+            centralGravity: 0.15,
+            springLength: 120,
+            springConstant: 0.04
+          }
+        },
+        interaction: {
+          hover: true,
+          tooltipDelay: 200
+        }
+      };
+
+      const network = new vis.Network(container, graphData, options);
+
+      // Handle Node Clicks (Inspector)
+      network.on("click", function(params) {
+        if (params.nodes.length > 0) {
+          const clickedNodeId = params.nodes[0];
+          const nodeData = styledNodes.find(n => n.id === clickedNodeId);
+          
+          inspector.innerHTML = `
+            <strong>URI:</strong> <a href="${nodeData.id}" target="_blank" style="color: #00b4d8;">${nodeData.id}</a><br>
+            <strong>Name:</strong> ${nodeData.label}<br>
+            <strong>OWL Class:</strong> sec:${nodeData.group}<br>
+            <strong>RDF Type:</strong> http://enterprise.org/ontology/sec#${nodeData.group}
+          `;
+        } else {
+          inspector.innerHTML = `<span style="color: #888;">Select a node in the graph to inspect its OWL / RDF properties...</span>`;
+        }
+      });
+    })
+    .catch(err => {
+      console.error("Error rendering network graph:", err);
+      container.innerHTML = `<div class="p-4 text-danger">Failed to load graph data. Check console for details.</div>`;
+    });
+});
+</script>
 
 ## Pipeline Architecture
 
@@ -32,3 +163,4 @@ The pipeline binds to a custom namespace `sec` (`http://enterprise.org/ontology/
 - **Classes**:
   - `sec:Corporation` for the parent entity (e.g., Goldman Sachs `GS`).
   - `sec:Subsidiary` for the subsidiary entities listed in the filing.
+
