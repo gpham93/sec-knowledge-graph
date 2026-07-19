@@ -151,6 +151,197 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+## 🤖 Live Graph RAG Chatbot
+Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini's answers in real time.
+
+::: {.graph-card}
+### Graph RAG AI Copilot
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <span class="badge-custom badge-corp">Grounded in SEC Graph</span>
+  </div>
+  <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif;">⚙️ Configure API Key</button>
+</div>
+
+<div id="key-panel" class="api-key-panel d-none">
+  <label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;">Gemini API Key (stored locally in your browser):</label>
+  <div class="input-group mb-2">
+    <input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy...">
+    <button id="save-key-btn" class="btn btn-sm btn-primary">Save Key</button>
+  </div>
+  <small class="text-muted">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
+</div>
+
+<div id="chat-log" class="chat-log">
+  <div class="chat-message bot">
+    Hello! I am your SEC Graph RAG assistant. Set your Gemini API key above to start querying, or try one of the suggestion questions below:
+  </div>
+</div>
+
+<div class="chat-chips">
+  <div class="chip" onclick="sendSuggestion('What is Morgan Stanley\'s CIK and state of incorporation?')">Morgan Stanley Info</div>
+  <div class="chip" onclick="sendSuggestion('Which JPMorgan Chase subsidiaries are located in Germany?')">JPM Germany Subs</div>
+  <div class="chip" onclick="sendSuggestion('Are there any duplicate or clustered subsidiaries?')">Deduplication Info</div>
+  <div class="chip" onclick="sendSuggestion('What is Goldman Sachs\' business address?')">GS Address</div>
+</div>
+
+<div class="input-group">
+  <input type="text" id="chat-input" class="form-control" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
+  <button id="send-chat-btn" class="btn btn-primary">Send</button>
+</div>
+:::
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggleKeyBtn = document.getElementById('toggle-key-btn');
+  const keyPanel = document.getElementById('key-panel');
+  const geminiKeyInput = document.getElementById('gemini-key');
+  const saveKeyBtn = document.getElementById('save-key-btn');
+  const chatLog = document.getElementById('chat-log');
+  const chatInput = document.getElementById('chat-input');
+  const sendChatBtn = document.getElementById('send-chat-btn');
+  
+  let graphDataText = "";
+  
+  // Fetch graph data to build our RAG grounding context
+  fetch('data_graph.json')
+    .then(r => r.json())
+    .then(data => {
+      let context = "FACTS FROM CORPORATE KNOWLEDGE GRAPH:\n";
+      
+      const corps = data.nodes.filter(n => n.group === 'Corporation');
+      const subs = data.nodes.filter(n => n.group === 'Subsidiary');
+      
+      context += "PARENTS (Corporations):\n";
+      corps.forEach(c => {
+        context += `- ${c.label} (URI: ${c.id}) has CIK ${c.cik}, SIC code ${c.sic} (${c.sicDescription}), state of incorporation ${c.stateOfIncorporation}, address: ${c.businessAddress.replace(/\\n/g, ', ')}.\n`;
+      });
+      
+      context += "\nRELATIONSHIPS (Ownership & Jurisdictions):\n";
+      data.edges.forEach(e => {
+        const parent = corps.find(c => c.id === e.from);
+        const sub = subs.find(s => s.id === e.to);
+        if (parent && sub) {
+          context += `- ${parent.label} owns subsidiary ${sub.label} (URI: ${sub.id}) which is incorporated in jurisdiction: ${sub.jurisdiction}.\n`;
+        }
+      });
+      
+      graphDataText = context;
+    })
+    .catch(e => console.error("Error loading graph context for chatbot:", e));
+
+  // Load key from localStorage
+  if (localStorage.getItem('gemini_api_key')) {
+    geminiKeyInput.value = localStorage.getItem('gemini_api_key');
+  }
+
+  // Toggle key panel
+  toggleKeyBtn.addEventListener('click', () => {
+    keyPanel.classList.toggle('d-none');
+  });
+
+  // Save key
+  saveKeyBtn.addEventListener('click', () => {
+    const key = geminiKeyInput.value.trim();
+    if (key) {
+      localStorage.setItem('gemini_api_key', key);
+      appendMessage('bot', 'API Key saved successfully! Ask me anything.');
+      keyPanel.classList.add('d-none');
+    } else {
+      localStorage.removeItem('gemini_api_key');
+      appendMessage('bot', 'API Key cleared.');
+    }
+  });
+
+  // Append a message to the chat UI
+  function appendMessage(sender, text) {
+    const msg = document.createElement('div');
+    msg.className = `chat-message ${sender}`;
+    msg.innerHTML = text.replace(/\n/g, '<br>');
+    chatLog.appendChild(msg);
+    chatLog.scrollTop = chatLog.scrollHeight;
+    return msg;
+  }
+
+  // Call Gemini API
+  function queryGemini(userMessage) {
+    const apiKey = localStorage.getItem('gemini_api_key');
+    if (!apiKey) {
+      appendMessage('bot', '⚠️ Please configure your Gemini API Key using the gear settings button above to enable Graph RAG chatbot queries.');
+      return;
+    }
+
+    const botBubble = appendMessage('bot', 'Thinking...');
+
+    const prompt = `
+You are an expert corporate intelligence assistant. You have access to a verified facts database derived from SEC EDGAR filings.
+
+${graphDataText}
+
+Based ONLY on the facts above, answer this question: "${userMessage}"
+
+Rules:
+1. Ground your answer strictly in the facts database above. If the database does not have the info, say "I cannot find this information in the SEC knowledge graph."
+2. Do not assume or extrapolate.
+3. Be concise and cite the parent-subsidiary relationships or metadata.
+`;
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }]
+      })
+    })
+    .then(r => {
+      if (!r.ok) {
+        return r.json().then(err => { throw new Error(err.error.message || 'API request failed') });
+      }
+      return r.json();
+    })
+    .then(data => {
+      let answer = "";
+      try {
+        answer = data.candidates[0].content.parts[0].text;
+      } catch (err) {
+        answer = "Could not parse response from Gemini API.";
+      }
+      botBubble.innerHTML = answer.replace(/\n/g, '<br>');
+      chatLog.scrollTop = chatLog.scrollHeight;
+    })
+    .catch(err => {
+      console.error("Gemini API error:", err);
+      botBubble.innerHTML = `<span class="text-danger">Error: ${err.message}</span>`;
+      chatLog.scrollTop = chatLog.scrollHeight;
+    });
+  }
+
+  // Handle messages sending
+  function handleSend() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    
+    appendMessage('user', text);
+    chatInput.value = "";
+    
+    queryGemini(text);
+  }
+
+  sendChatBtn.addEventListener('click', handleSend);
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+
+  // Bind to window to allow chip triggers
+  window.sendSuggestion = function(text) {
+    appendMessage('user', text);
+    queryGemini(text);
+  };
+});
+</script>
+
 ## Pipeline Architecture
 
 The architecture consists of three core phases:
