@@ -1,2 +1,7 @@
 edgartools
 rdflib
+splink
+pyshacl
+pandas
+duckdb
+tenacity
