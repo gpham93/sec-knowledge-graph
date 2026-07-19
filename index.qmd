@@ -47,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const styledNodes = data.nodes.map(node => {
         const isCorp = node.group === 'Corporation';
         return {
-          id: node.id,
-          label: node.label,
-          group: node.group,
+          ...node, // Preserve CIK, SIC, stateOfIncorporation, businessAddress, jurisdiction, etc.
           shape: 'dot',
           size: isCorp ? 28 : 16,
           color: {
@@ -120,12 +118,27 @@ document.addEventListener("DOMContentLoaded", function() {
           const clickedNodeId = params.nodes[0];
           const nodeData = styledNodes.find(n => n.id === clickedNodeId);
           
-          inspector.innerHTML = `
-            <strong>URI:</strong> <a href="${nodeData.id}" target="_blank" style="color: #00b4d8;">${nodeData.id}</a><br>
+          let detailsHtml = `
+            <strong>URI:</strong> <a href="${nodeData.id}" target="_blank" style="color: #00b4d8; text-decoration: none;">${nodeData.id}</a><br>
             <strong>Name:</strong> ${nodeData.label}<br>
             <strong>OWL Class:</strong> sec:${nodeData.group}<br>
-            <strong>RDF Type:</strong> http://enterprise.org/ontology/sec#${nodeData.group}
           `;
+          
+          if (nodeData.group === 'Corporation') {
+            const formattedAddress = (nodeData.businessAddress || "").replace(/\n/g, ", ");
+            detailsHtml += `
+              <strong>CIK:</strong> ${nodeData.cik || 'Unknown'}<br>
+              <strong>SIC Code:</strong> ${nodeData.sic || 'Unknown'} (${nodeData.sicDescription || 'Unknown'})<br>
+              <strong>Incorporated In:</strong> ${nodeData.stateOfIncorporation || 'Unknown'}<br>
+              <strong>Business Address:</strong> ${formattedAddress}
+            `;
+          } else {
+            detailsHtml += `
+              <strong>Jurisdiction:</strong> ${nodeData.jurisdiction || 'Unknown'}
+            `;
+          }
+          
+          inspector.innerHTML = detailsHtml;
         } else {
           inspector.innerHTML = `<span style="color: #888;">Select a node in the graph to inspect its OWL / RDF properties...</span>`;
         }
@@ -161,6 +174,29 @@ The pipeline binds to a custom namespace `sec` (`http://enterprise.org/ontology/
 - **Inverse Properties**: `sec:ownsSubsidiary` is defined as the inverse of `sec:isOwnedBy`.
 - **Functional Property**: `sec:isOwnedBy` is defined as functional, ensuring a subsidiary has at most one parent company.
 - **Classes**:
-  - `sec:Corporation` for the parent entity (e.g., Goldman Sachs `GS`).
+  - `sec:Corporation` for the parent entity (e.g., Goldman Sachs `GS`, Morgan Stanley `MS`, JPMorgan Chase `JPM`).
   - `sec:Subsidiary` for the subsidiary entities listed in the filing.
+
+---
+
+## 🤖 Graph RAG Query Engine
+
+This project incorporates a standalone **Graph Retrieval-Augmented Generation (Graph RAG)** tool. It allows natural language questioning over the structured SEC EDGAR filing data, combining SPARQL graph traversal with LLM inference.
+
+### How to Run Graph RAG Locally
+Ensure you have your Gemini API key configured in your terminal environment, then run the query tool:
+
+```bash
+# 1. Export your API key
+export GEMINI_API_KEY="your-gemini-api-key"
+
+# 2. Run the Query Engine
+python scripts/graph_rag.py --query "Which JPMorgan Chase subsidiaries are located in Germany?"
+```
+
+The script will:
+1. Load [data_graph.ttl](file:///Users/gabrielpham/.gemini/antigravity-ide/scratch/sec-knowledge-graph/data_graph.ttl).
+2. Feed the relevant serialized Turtle graph context into the Gemini model.
+3. Generate a highly accurate, grounded answer complete with URI citations.
+
 

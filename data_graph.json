@@ -3,442 +3,542 @@
     {
       "id": "http://enterprise.org/ontology/sec#GS",
       "label": "GOLDMAN SACHS GROUP INC",
-      "group": "Corporation"
+      "group": "Corporation",
+      "cik": "886982",
+      "sic": "6211",
+      "sicDescription": "Security Brokers, Dealers & Flotation Companies",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "200 WEST STREET\nNEW YORK, NY 10282"
     },
     {
       "id": "http://enterprise.org/ontology/sec#MS",
       "label": "MORGAN STANLEY",
-      "group": "Corporation"
+      "group": "Corporation",
+      "cik": "895421",
+      "sic": "6211",
+      "sicDescription": "Security Brokers, Dealers & Flotation Companies",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "1585 BROADWAY\nNEW YORK, NY 10036"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPM",
       "label": "JPMORGAN CHASE & CO",
-      "group": "Corporation"
+      "group": "Corporation",
+      "cik": "19617",
+      "sic": "6021",
+      "sicDescription": "National Commercial Banks",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "270 PARK AVENUE\nNEW YORK, NY 10017"
     },
     {
       "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
       "label": "The Goldman Sachs Group, Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs__Co_LLC",
       "label": "Goldman Sachs & Co. LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "New York"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Funding_LLC",
       "label": "Goldman Sachs Funding LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GS_European_Funding_I_SA_RL_LLC",
       "label": "GS European Funding I S.A R.L. LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Murray_Street_Corporation",
       "label": "Murray Street Corporation",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado",
       "label": "Sphere Fundo De Investimento Multimercado - Investimento No Exterior Credito Privado",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Brazil"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GS_Financial_Services_II_LLC",
       "label": "GS Financial Services II, LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_I_CO",
       "label": "Goldman Sachs Global Funding I, CO.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_II_LTD",
       "label": "Goldman Sachs Global Funding II LTD",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Global_Funding_III_Limited",
       "label": "Goldman Sachs Global Funding III Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_LLC",
       "label": "Goldman Sachs (UK) L.L.C.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_UK_Funding_Limited",
       "label": "Goldman Sachs UK Funding Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Group_UK_Limited",
       "label": "Goldman Sachs Group UK Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_International_Bank",
       "label": "Goldman Sachs International Bank",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_International",
       "label": "Goldman Sachs International",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#J_Aron__Company_LLC",
       "label": "J. Aron & Company LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "New York"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GSAM_Holdings_LLC",
       "label": "GSAM Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_LP",
       "label": "Goldman Sachs Asset Management, L.P.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd",
       "label": "Goldman Sachs Asset Management UK Holdings I Ltd",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd",
       "label": "Goldman Sachs Asset Management UK Holdings II Ltd",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_I_BV",
       "label": "Goldman Sachs Asset Management Holdings I B.V.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_II_BV",
       "label": "Goldman Sachs Asset Management Holdings II B.V.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_Holdings_BV",
       "label": "Goldman Sachs Asset Management Holdings B.V.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_International_Holdings_BV",
       "label": "Goldman Sachs Asset Management International Holdings B.V.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asset_Management_BV",
       "label": "Goldman Sachs Asset Management B.V.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Asia_Corporate_Holdings_LLC",
       "label": "Goldman Sachs (Asia) Corporate Holdings L.L.C.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Ltd",
       "label": "Goldman Sachs (Japan) Ltd.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "British Virgin Islands"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Japan_Co_Ltd",
       "label": "Goldman Sachs Japan Co., Ltd.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GS_Lending_Partners_Holdings_LLC",
       "label": "GS Lending Partners Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Lending_Partners_LLC",
       "label": "Goldman Sachs Lending Partners LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_USA",
       "label": "Goldman Sachs Bank USA",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "New York"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Bank_Europe_SE",
       "label": "Goldman Sachs Bank Europe SE",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Germany"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Mortgage_Company",
       "label": "Goldman Sachs Mortgage Company",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "New York"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GSSG_Holdings_LLC",
       "label": "GSSG Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#ALQ_Holdings_Del_LLC",
       "label": "ALQ Holdings (Del) LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GLQ_Nova_Global_Designated_Activity_Company",
       "label": "GLQ Nova Global Designated Activity Company",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Ireland"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GLQ_International_Partners_LP",
       "label": "GLQ International Partners LP",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Jersey"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GLQ_International_Holdings_Ltd",
       "label": "GLQ International Holdings Ltd",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Jersey"
     },
     {
       "id": "http://enterprise.org/ontology/sec#GLQ_Holdings_UK_Ltd",
       "label": "GLQ Holdings (UK) Ltd",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_LLC",
       "label": "Goldman Sachs Non-US Americas Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_NonUS_Americas_Holdings_II_LLC",
       "label": "Goldman Sachs Non-US Americas Holdings II LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Holdings_LLC",
       "label": "Goldman Sachs Canada Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Goldman_Sachs_Canada_Inc",
       "label": "Goldman Sachs Canada Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Canada"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Broad_Street_Principal_Investments_Superholdco_LLC",
       "label": "Broad Street Principal Investments Superholdco LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#BSCH_Global_LLC",
       "label": "BSCH Global LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Company",
       "label": "Company",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Jurisdiction of Incorporation or Formation"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley",
       "label": "Morgan Stanley",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Management_LLC",
       "label": "Morgan Stanley Capital Management, LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_LLC",
       "label": "Morgan Stanley & Co. LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_NA",
       "label": "Morgan Stanley Bank, N.A.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Domestic_Holdings_LLC",
       "label": "Morgan Stanley Domestic Holdings, LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Group_Inc",
       "label": "Morgan Stanley Capital Group Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Capital_Services_LLC",
       "label": "Morgan Stanley Capital Services LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Inc",
       "label": "Morgan Stanley Investment Management Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Private_Bank_National_Association",
       "label": "Morgan Stanley Private Bank, National Association",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Smith_Barney_LLC",
       "label": "Morgan Stanley Smith Barney LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Finance_LLC",
       "label": "Morgan Stanley Finance LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Holdings_LLC",
       "label": "Morgan Stanley Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Holdings_Inc",
       "label": "Morgan Stanley International Holdings Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Japan_Holdings_Co_Ltd",
       "label": "Morgan Stanley Japan Holdings Co., Ltd.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_MUFG_Securities_Co_Ltd",
       "label": "Morgan Stanley MUFG Securities Co., Ltd.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_International_Limited",
       "label": "Morgan Stanley International Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Europe_SE",
       "label": "Morgan Stanley Europe SE",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Germany"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Bank_AG",
       "label": "Morgan Stanley Bank AG",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Germany"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investments_UK",
       "label": "Morgan Stanley Investments (UK)",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley__Co_International_plc",
       "label": "Morgan Stanley & Co. International plc",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Limited",
       "label": "Morgan Stanley Investment Management Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association",
       "label": "JPMorgan Chase Bank, National Association",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#Paymentech_LLC",
       "label": "Paymentech, LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited",
       "label": "J.P. Morgan International Finance Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd",
       "label": "JPMorgan Securities Japan Co., Ltd.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited",
       "label": "J.P. Morgan Capital Holdings Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc",
       "label": "J.P. Morgan Securities plc",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_SE",
       "label": "J.P. Morgan SE",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Germany"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC",
       "label": "JPMorgan Chase Holdings LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited",
       "label": "J.P. Morgan Services India Private Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "India"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc",
       "label": "JPMorgan Asset Management Holdings Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc",
       "label": "JPMorgan Distribution Services, Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited",
       "label": "JPMorgan Asset Management International Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited",
       "label": "JPMorgan Asset Management (UK) Limited",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl",
       "label": "JPMorgan Asset Management Holdings (Luxembourg) S.\u00e0 r.l.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Luxembourg"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl",
       "label": "JPMorgan Asset Management (Europe) S.\u00e0 r.l.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "Luxembourg"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc",
       "label": "J.P. Morgan Investment Management Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc",
       "label": "J.P. Morgan Broker-Dealer Holdings Inc.",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     },
     {
       "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC",
       "label": "J.P. Morgan Securities LLC",
-      "group": "Subsidiary"
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
     }
   ],
   "edges": [

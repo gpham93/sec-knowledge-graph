@@ -100,11 +100,21 @@ def main():
     g.add((SEC.isOwnedBy, RDF.type, OWL.ObjectProperty))
     g.add((SEC.ownsSubsidiary, OWL.inverseOf, SEC.isOwnedBy))
     g.add((SEC.isOwnedBy, RDF.type, OWL.FunctionalProperty))
+    
+    # Declare Datatype Properties
+    g.add((SEC.hasName, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.cik, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.sic, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.sicDescription, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.stateOfIncorporation, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.businessAddress, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.hasJurisdiction, RDF.type, OWL.DatatypeProperty))
 
     # Pull data for multiple top-tier financial parents
     tickers = ["GS", "MS", "JPM"]
-    all_subsidiaries = []  # List of tuples (parent_uri, sub_name)
-    parent_info = {}       # parent_uri -> company_name
+    all_subsidiaries = []      # List of tuples (parent_uri, sub_name, jurisdiction)
+    parent_info = {}           # parent_uri -> company_name
+    parent_metadata = {}       # parent_uri -> dict of meta values
 
     for ticker in tickers:
         print(f"Fetching filings for {ticker}...")
@@ -113,13 +123,22 @@ def main():
             parent_uri = URIRef(SEC + ticker)
             parent_info[parent_uri] = company.name
             
+            # Cache parent metadata
+            parent_metadata[parent_uri] = {
+                "cik": str(company.cik),
+                "sic": str(company.sic),
+                "sicDescription": company.industry or "Unknown",
+                "stateOfIncorporation": company.data.state_of_incorporation_description or "Unknown",
+                "businessAddress": str(company.business_address()) or "Unknown"
+            }
+            
             for sub in latest_10k.subsidiaries:
-                all_subsidiaries.append((parent_uri, sub.name))
+                all_subsidiaries.append((parent_uri, sub.name, getattr(sub, "jurisdiction", None)))
         except Exception as e:
             print(f"Error fetching filings for {ticker}: {e}")
 
     # Collect all raw subsidiary names for cross-entity deduplication
-    raw_sub_names = [sub_name for _, sub_name in all_subsidiaries]
+    raw_sub_names = [sub_name for _, sub_name, _ in all_subsidiaries]
     rep_map = deduplicate_subsidiary_names(raw_sub_names)
 
     # Setup JSON graph structure for visualization
@@ -128,14 +147,30 @@ def main():
     
     # Add parent corporation nodes
     for parent_uri, parent_name in parent_info.items():
+        meta = parent_metadata.get(parent_uri, {})
         g.add((parent_uri, RDF.type, SEC.Corporation))
         g.add((parent_uri, SEC.hasName, Literal(parent_name)))
-        nodes.append({"id": str(parent_uri), "label": parent_name, "group": "Corporation"})
+        g.add((parent_uri, SEC.cik, Literal(meta.get("cik", ""))))
+        g.add((parent_uri, SEC.sic, Literal(meta.get("sic", ""))))
+        g.add((parent_uri, SEC.sicDescription, Literal(meta.get("sicDescription", ""))))
+        g.add((parent_uri, SEC.stateOfIncorporation, Literal(meta.get("stateOfIncorporation", ""))))
+        g.add((parent_uri, SEC.businessAddress, Literal(meta.get("businessAddress", ""))))
+        
+        nodes.append({
+            "id": str(parent_uri),
+            "label": parent_name,
+            "group": "Corporation",
+            "cik": meta.get("cik", ""),
+            "sic": meta.get("sic", ""),
+            "sicDescription": meta.get("sicDescription", ""),
+            "stateOfIncorporation": meta.get("stateOfIncorporation", ""),
+            "businessAddress": meta.get("businessAddress", "")
+        })
 
     added_subs = set()
     added_edges = set()
 
-    for parent_uri, sub_name in all_subsidiaries:
+    for parent_uri, sub_name, sub_jurisdict in all_subsidiaries:
         # Resolve names to their cluster's representative name
         resolved_name = rep_map.get(sub_name, sub_name)
         
@@ -143,11 +178,21 @@ def main():
         clean_name = re.sub(r'[^a-zA-Z0-9_]', '', resolved_name.replace(" ", "_"))
         sub_uri = URIRef(SEC + clean_name)
         
+        # Determine jurisdiction
+        resolved_juris = sub_jurisdict or "Unknown"
+        
         # Add the subsidiary node to the RDF graph if not already added
         if sub_uri not in added_subs:
             g.add((sub_uri, RDF.type, SEC.Subsidiary))
             g.add((sub_uri, SEC.hasName, Literal(resolved_name)))
-            nodes.append({"id": str(sub_uri), "label": resolved_name, "group": "Subsidiary"})
+            g.add((sub_uri, SEC.hasJurisdiction, Literal(resolved_juris)))
+            
+            nodes.append({
+                "id": str(sub_uri), 
+                "label": resolved_name, 
+                "group": "Subsidiary",
+                "jurisdiction": resolved_juris
+            })
             added_subs.add(sub_uri)
             
         # Add the parent-subsidiary relationships (bi-directional)
@@ -176,6 +221,11 @@ def main():
         sh:property [
             sh:path sec:isOwnedBy ;
             sh:minCount 1 ;
+        ] ;
+        sh:property [
+            sh:path sec:hasJurisdiction ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
         ] .
     """
     
