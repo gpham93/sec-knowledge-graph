@@ -1,6 +1,192 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix sec: <http://enterprise.org/ontology/sec#> .
 
+sec:ownsSubsidiary a owl:ObjectProperty ;
+    owl:inverseOf sec:isOwnedBy .
+
+sec:ALQ_Holdings_Del_LLC a sec:Subsidiary ;
+    sec:hasName "ALQ Holdings (Del) LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:BSCH_Global_LLC a sec:Subsidiary ;
+    sec:hasName "BSCH Global LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Broad_Street_Principal_Investments_Superholdco_LLC a sec:Subsidiary ;
+    sec:hasName "Broad Street Principal Investments Superholdco LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_Holdings_UK_Ltd a sec:Subsidiary ;
+    sec:hasName "GLQ Holdings (UK) Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_International_Holdings_Ltd a sec:Subsidiary ;
+    sec:hasName "GLQ International Holdings Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_International_Partners_LP a sec:Subsidiary ;
+    sec:hasName "GLQ International Partners LP" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_Nova_Global_Designated_Activity_Company a sec:Subsidiary ;
+    sec:hasName "GLQ Nova Global Designated Activity Company" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GSAM_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "GSAM Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GSSG_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "GSSG Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_European_Funding_I_SA_RL_LLC a sec:Subsidiary ;
+    sec:hasName "GS European Funding I S.A R.L. LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_Financial_Services_II_LLC a sec:Subsidiary ;
+    sec:hasName "GS Financial Services II, LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_Lending_Partners_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "GS Lending Partners Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asia_Corporate_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs (Asia) Corporate Holdings L.L.C." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_BV a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_BV a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management Holdings B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_II_BV a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management Holdings II B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_I_BV a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management Holdings I B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_International_Holdings_BV a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management International Holdings B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_LP a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management, L.P." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management UK Holdings II Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Asset Management UK Holdings I Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Bank_Europe_SE a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Bank Europe SE" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Bank_USA a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Bank USA" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Canada_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Canada Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Canada_Inc a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Canada Inc." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Funding_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Funding LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_III_Limited a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Global Funding III Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_II_LTD a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Global Funding II LTD" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_I_CO a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Global Funding I, CO." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Group_UK_Limited a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Group UK Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_International a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs International" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_International_Bank a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs International Bank" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Japan_Co_Ltd a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Japan Co., Ltd." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Japan_Ltd a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs (Japan) Ltd." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Lending_Partners_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Lending Partners LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Mortgage_Company a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Mortgage Company" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_NonUS_Americas_Holdings_II_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Non-US Americas Holdings II LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_NonUS_Americas_Holdings_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs Non-US Americas Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_UK_Funding_Limited a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs UK Funding Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_UK_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs (UK) L.L.C." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs__Co_LLC a sec:Subsidiary ;
+    sec:hasName "Goldman Sachs & Co. LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:J_Aron__Company_LLC a sec:Subsidiary ;
+    sec:hasName "J. Aron & Company LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Murray_Street_Corporation a sec:Subsidiary ;
+    sec:hasName "Murray Street Corporation" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado a sec:Subsidiary ;
+    sec:hasName "Sphere Fundo De Investimento Multimercado - Investimento No Exterior Credito Privado" ;
+    sec:isOwnedBy sec:GS .
+
+sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
+    sec:hasName "The Goldman Sachs Group, Inc." ;
+    sec:isOwnedBy sec:GS .
+
+sec:isOwnedBy a owl:FunctionalProperty,
+        owl:ObjectProperty .
+
 sec:GS a sec:Corporation ;
     sec:hasName "GOLDMAN SACHS GROUP INC" ;
     sec:ownsSubsidiary sec:ALQ_Holdings_Del_LLC,
@@ -48,145 +234,4 @@ sec:GS a sec:Corporation ;
         sec:Murray_Street_Corporation,
         sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado,
         sec:The_Goldman_Sachs_Group_Inc .
-
-sec:ownsSubsidiary a owl:ObjectProperty ;
-    owl:inverseOf sec:isOwnedBy .
-
-sec:ALQ_Holdings_Del_LLC a sec:Subsidiary ;
-    sec:hasName "ALQ Holdings (Del) LLC" .
-
-sec:BSCH_Global_LLC a sec:Subsidiary ;
-    sec:hasName "BSCH Global LLC" .
-
-sec:Broad_Street_Principal_Investments_Superholdco_LLC a sec:Subsidiary ;
-    sec:hasName "Broad Street Principal Investments Superholdco LLC" .
-
-sec:GLQ_Holdings_UK_Ltd a sec:Subsidiary ;
-    sec:hasName "GLQ Holdings (UK) Ltd" .
-
-sec:GLQ_International_Holdings_Ltd a sec:Subsidiary ;
-    sec:hasName "GLQ International Holdings Ltd" .
-
-sec:GLQ_International_Partners_LP a sec:Subsidiary ;
-    sec:hasName "GLQ International Partners LP" .
-
-sec:GLQ_Nova_Global_Designated_Activity_Company a sec:Subsidiary ;
-    sec:hasName "GLQ Nova Global Designated Activity Company" .
-
-sec:GSAM_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "GSAM Holdings LLC" .
-
-sec:GSSG_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "GSSG Holdings LLC" .
-
-sec:GS_European_Funding_I_SA_RL_LLC a sec:Subsidiary ;
-    sec:hasName "GS European Funding I S.A R.L. LLC" .
-
-sec:GS_Financial_Services_II_LLC a sec:Subsidiary ;
-    sec:hasName "GS Financial Services II, LLC" .
-
-sec:GS_Lending_Partners_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "GS Lending Partners Holdings LLC" .
-
-sec:Goldman_Sachs_Asia_Corporate_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs (Asia) Corporate Holdings L.L.C." .
-
-sec:Goldman_Sachs_Asset_Management_BV a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management B.V." .
-
-sec:Goldman_Sachs_Asset_Management_Holdings_BV a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management Holdings B.V." .
-
-sec:Goldman_Sachs_Asset_Management_Holdings_II_BV a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management Holdings II B.V." .
-
-sec:Goldman_Sachs_Asset_Management_Holdings_I_BV a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management Holdings I B.V." .
-
-sec:Goldman_Sachs_Asset_Management_International_Holdings_BV a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management International Holdings B.V." .
-
-sec:Goldman_Sachs_Asset_Management_LP a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management, L.P." .
-
-sec:Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management UK Holdings II Ltd" .
-
-sec:Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Asset Management UK Holdings I Ltd" .
-
-sec:Goldman_Sachs_Bank_Europe_SE a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Bank Europe SE" .
-
-sec:Goldman_Sachs_Bank_USA a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Bank USA" .
-
-sec:Goldman_Sachs_Canada_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Canada Holdings LLC" .
-
-sec:Goldman_Sachs_Canada_Inc a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Canada Inc." .
-
-sec:Goldman_Sachs_Funding_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Funding LLC" .
-
-sec:Goldman_Sachs_Global_Funding_III_Limited a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Global Funding III Limited" .
-
-sec:Goldman_Sachs_Global_Funding_II_LTD a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Global Funding II LTD" .
-
-sec:Goldman_Sachs_Global_Funding_I_CO a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Global Funding I, CO." .
-
-sec:Goldman_Sachs_Group_UK_Limited a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Group UK Limited" .
-
-sec:Goldman_Sachs_International a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs International" .
-
-sec:Goldman_Sachs_International_Bank a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs International Bank" .
-
-sec:Goldman_Sachs_Japan_Co_Ltd a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Japan Co., Ltd." .
-
-sec:Goldman_Sachs_Japan_Ltd a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs (Japan) Ltd." .
-
-sec:Goldman_Sachs_Lending_Partners_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Lending Partners LLC" .
-
-sec:Goldman_Sachs_Mortgage_Company a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Mortgage Company" .
-
-sec:Goldman_Sachs_NonUS_Americas_Holdings_II_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Non-US Americas Holdings II LLC" .
-
-sec:Goldman_Sachs_NonUS_Americas_Holdings_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs Non-US Americas Holdings LLC" .
-
-sec:Goldman_Sachs_UK_Funding_Limited a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs UK Funding Limited" .
-
-sec:Goldman_Sachs_UK_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs (UK) L.L.C." .
-
-sec:Goldman_Sachs__Co_LLC a sec:Subsidiary ;
-    sec:hasName "Goldman Sachs & Co. LLC" .
-
-sec:J_Aron__Company_LLC a sec:Subsidiary ;
-    sec:hasName "J. Aron & Company LLC" .
-
-sec:Murray_Street_Corporation a sec:Subsidiary ;
-    sec:hasName "Murray Street Corporation" .
-
-sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado a sec:Subsidiary ;
-    sec:hasName "Sphere Fundo De Investimento Multimercado - Investimento No Exterior Credito Privado" .
-
-sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
-    sec:hasName "The Goldman Sachs Group, Inc." .
-
-sec:isOwnedBy a owl:FunctionalProperty,
-        owl:ObjectProperty .
 
