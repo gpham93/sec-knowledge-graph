@@ -110,6 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -323,10 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#goldman-sachs-group-inc.-subsidiaries" id="toc-goldman-sachs-group-inc.-subsidiaries" class="nav-link" data-scroll-target="#goldman-sachs-group-inc.-subsidiaries">Goldman Sachs Group Inc.&nbsp;&amp; Subsidiaries</a></li>
   </ul></li>
-  <li><a href="#live-graph-rag-chatbot" id="toc-live-graph-rag-chatbot" class="nav-link" data-scroll-target="#live-graph-rag-chatbot">🤖 Live Graph RAG Chatbot</a>
-  <ul class="collapse">
-  <li><a href="#graph-rag-ai-copilot" id="toc-graph-rag-ai-copilot" class="nav-link" data-scroll-target="#graph-rag-ai-copilot">Graph RAG AI Copilot</a></li>
-  </ul></li>
+  <li><a href="#live-graph-rag-chatbot" id="toc-live-graph-rag-chatbot" class="nav-link" data-scroll-target="#live-graph-rag-chatbot">🤖 Live Graph RAG Chatbot</a></li>
   <li><a href="#pipeline-architecture" id="toc-pipeline-architecture" class="nav-link" data-scroll-target="#pipeline-architecture">Pipeline Architecture</a></li>
   <li><a href="#ontology-definition" id="toc-ontology-definition" class="nav-link" data-scroll-target="#ontology-definition">Ontology Definition</a></li>
   <li><a href="#graph-rag-query-engine" id="toc-graph-rag-query-engine" class="nav-link" data-scroll-target="#graph-rag-query-engine">🤖 Graph RAG Query Engine</a>
@@ -502,13 +500,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <section id="live-graph-rag-chatbot" class="level2">
 <h2 class="anchored" data-anchor-id="live-graph-rag-chatbot">🤖 Live Graph RAG Chatbot</h2>
 <p>Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini’s answers in real time.</p>
-<section id="graph-rag-ai-copilot" class="level3 graph-card">
-<h3 class="anchored" data-anchor-id="graph-rag-ai-copilot">Graph RAG AI Copilot</h3>
-<div class="d-flex justify-content-between align-items-center mb-3">
-<div>
-<pre><code>&lt;span class="badge-custom badge-corp"&gt;Grounded in SEC Graph&lt;/span&gt;</code></pre>
-</div>
-<p><button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif;">⚙️ Configure API Key</button></p>
+<div class="chat-container">
+<div class="chat-header">
+<p><span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;">Grounded in SEC Graph</span> <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;">⚙️ API Key</button></p>
 </div>
 <div id="key-panel" class="api-key-panel d-none">
 <label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;">Gemini API Key (stored locally in your browser):</label>
@@ -516,11 +510,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <pre><code>&lt;input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy..."&gt;
 &lt;button id="save-key-btn" class="btn btn-sm btn-primary"&gt;Save Key&lt;/button&gt;</code></pre>
 </div>
-<p><small class="text-muted">No backend is used. Your key is sent directly to Google’s Gemini API endpoint in your browser.</small></p>
+<p><small class="text-muted" style="font-size: 0.75rem;">No backend is used. Your key is sent directly to Google’s Gemini API endpoint in your browser.</small></p>
 </div>
 <div id="chat-log" class="chat-log">
 <div class="chat-message bot">
 <pre><code>Hello! I am your SEC Graph RAG assistant. Set your Gemini API key above to start querying, or try one of the suggestion questions below:</code></pre>
+</div>
+</div>
+<div class="chat-input-area">
+<p><input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries..."> <button id="send-chat-btn" class="chat-send-btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"> <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"></path> </svg> </button></p>
 </div>
 </div>
 <div class="chat-chips">
@@ -537,10 +535,6 @@ Deduplication Info
 GS Address
 </div>
 </div>
-<div class="input-group">
-<p><input type="text" id="chat-input" class="form-control" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries..."> <button id="send-chat-btn" class="btn btn-primary">Send</button></p>
-</div>
-</section>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const toggleKeyBtn = document.getElementById('toggle-key-btn');
@@ -607,7 +601,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function appendMessage(sender, text) {
     const msg = document.createElement('div');
     msg.className = `chat-message ${sender}`;
-    msg.innerHTML = text.replace(/\n/g, '<br>');
+    msg.innerHTML = text;
     chatLog.appendChild(msg);
     chatLog.scrollTop = chatLog.scrollHeight;
     return msg;
@@ -621,7 +615,14 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const botBubble = appendMessage('bot', 'Thinking...');
+    // Append bot bubble with typing indicator
+    const botBubble = appendMessage('bot', `
+      <div class="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    `);
 
     const prompt = `
 You are an expert corporate intelligence assistant. You have access to a verified facts database derived from SEC EDGAR filings.
@@ -658,7 +659,8 @@ Rules:
       } catch (err) {
         answer = "Could not parse response from Gemini API.";
       }
-      botBubble.innerHTML = answer.replace(/\n/g, '<br>');
+      // Render markdown response dynamically using marked
+      botBubble.innerHTML = marked.parse(answer);
       chatLog.scrollTop = chatLog.scrollHeight;
     })
     .catch(err => {
@@ -673,7 +675,7 @@ Rules:
     const text = chatInput.value.trim();
     if (!text) return;
     
-    appendMessage('user', text);
+    appendMessage('user', text.replace(/\n/g, '<br>'));
     chatInput.value = "";
     
     queryGemini(text);
@@ -686,7 +688,7 @@ Rules:
 
   // Bind to window to allow chip triggers
   window.sendSuggestion = function(text) {
-    appendMessage('user', text);
+    appendMessage('user', text.replace(/\n/g, '<br>'));
     queryGemini(text);
   };
 });
@@ -726,11 +728,11 @@ Rules:
 <section id="how-to-run-graph-rag-locally" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-run-graph-rag-locally">How to Run Graph RAG Locally</h3>
 <p>Ensure you have your Gemini API key configured in your terminal environment, then run the query tool:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Export your API key</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GEMINI_API_KEY</span><span class="op">=</span><span class="st">"your-gemini-api-key"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Run the Query Engine</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/graph_rag.py <span class="at">--query</span> <span class="st">"Which JPMorgan Chase subsidiaries are located in Germany?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Export your API key</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GEMINI_API_KEY</span><span class="op">=</span><span class="st">"your-gemini-api-key"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Run the Query Engine</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/graph_rag.py <span class="at">--query</span> <span class="st">"Which JPMorgan Chase subsidiaries are located in Germany?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The script will: 1. Load <a href="file:///Users/gabrielpham/.gemini/antigravity-ide/scratch/sec-knowledge-graph/data_graph.ttl">data_graph.ttl</a>. 2. Feed the relevant serialized Turtle graph context into the Gemini model. 3. Generate a highly accurate, grounded answer complete with URI citations.</p>
 
 
