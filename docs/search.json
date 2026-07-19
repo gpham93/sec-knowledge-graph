@@ -14,6 +14,13 @@
     "text": "🌐 Interactive Subsidiary Tree\nExplore the extracted corporate structure of Goldman Sachs and its subsidiaries. Drag to move, scroll to zoom, and click any node to inspect its ontology properties in the panel below.\n\nGoldman Sachs Group Inc. & Subsidiaries\n\nCorporation Subsidiary\n\n\n\n\n\nSelect a node in the graph to inspect its OWL / RDF properties…"
   },
   {
+    "objectID": "index.html#live-graph-rag-chatbot",
+    "href": "index.html#live-graph-rag-chatbot",
+    "title": "SEC Corporate Subsidiary Knowledge Graph",
+    "section": "🤖 Live Graph RAG Chatbot",
+    "text": "🤖 Live Graph RAG Chatbot\nAsk questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini’s answers in real time.\n\nGraph RAG AI Copilot\n\n\n&lt;span class=\"badge-custom badge-corp\"&gt;Grounded in SEC Graph&lt;/span&gt;\n\n⚙️ Configure API Key\n\n\nGemini API Key (stored locally in your browser):\n\n&lt;input type=\"password\" id=\"gemini-key\" class=\"form-control form-control-sm\" placeholder=\"AIzaSy...\"&gt;\n&lt;button id=\"save-key-btn\" class=\"btn btn-sm btn-primary\"&gt;Save Key&lt;/button&gt;\n\nNo backend is used. Your key is sent directly to Google’s Gemini API endpoint in your browser.\n\n\n\nHello! I am your SEC Graph RAG assistant. Set your Gemini API key above to start querying, or try one of the suggestion questions below:\n\n\n\n\nMorgan Stanley Info\n\n\nJPM Germany Subs\n\n\nDeduplication Info\n\n\nGS Address\n\n\n\n Send"
+  },
+  {
     "objectID": "index.html#pipeline-architecture",
     "href": "index.html#pipeline-architecture",
     "title": "SEC Corporate Subsidiary Knowledge Graph",
