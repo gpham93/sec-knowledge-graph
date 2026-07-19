@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SEC Corporate Subsidiary Knowledge Graph",
+    "section": "",
+    "text": "Welcome to the SEC Corporate Subsidiary Knowledge Graph portfolio project.\nThis repository hosts an automated neuro-symbolic data pipeline that extracts corporate subsidiary hierarchies from SEC EDGAR filings and maps them into a Web Ontology Language (OWL)-governed knowledge graph."
+  },
+  {
+    "objectID": "index.html#pipeline-architecture",
+    "href": "index.html#pipeline-architecture",
+    "title": "SEC Corporate Subsidiary Knowledge Graph",
+    "section": "Pipeline Architecture",
+    "text": "Pipeline Architecture\nThe architecture consists of three core phases:\n\nExtraction: Programmatic ingestion of SEC EDGAR filings (specifically Form 10-K) to retrieve corporate structures using edgartools.\nKnowledge Representation: Modeling parent-subsidiary relationships into a formal Resource Description Framework (RDF) triplestore using rdflib.\nSemantic Schema (OWL): Enforcing logical consistency and enabling reasoner-ready inverse/functional properties (sec:ownsSubsidiary and sec:isOwnedBy).\n\ngraph TD\n    SEC[SEC EDGAR Filings 10-K] --&gt;|Python extract_sec_data.py| RDF[RDFlib Graph Builder]\n    RDF --&gt;|Ontology Enforcement| OWL[OWL Axioms & Properties]\n    OWL --&gt;|Serialization| Turtle[Turtle RDF Output .ttl]\n    Turtle --&gt;|Quarto Rendering| Web[Static Portfolio Docs]"
+  },
+  {
+    "objectID": "index.html#ontology-definition",
+    "href": "index.html#ontology-definition",
+    "title": "SEC Corporate Subsidiary Knowledge Graph",
+    "section": "Ontology Definition",
+    "text": "Ontology Definition\nThe pipeline binds to a custom namespace sec (http://enterprise.org/ontology/sec#) and constructs the following semantic relations:\n\nInverse Properties: sec:ownsSubsidiary is defined as the inverse of sec:isOwnedBy.\nFunctional Property: sec:isOwnedBy is defined as functional, ensuring a subsidiary has at most one parent company.\nClasses:\n\nsec:Corporation for the parent entity (e.g., Goldman Sachs GS).\nsec:Subsidiary for the subsidiary entities listed in the filing."
+  }
+]

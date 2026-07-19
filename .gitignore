@@ -11,3 +11,6 @@ __pycache__/
 
 # Quarto temporary files
 .quarto/
+
+/.quarto/
+**/*.quarto_ipynb
