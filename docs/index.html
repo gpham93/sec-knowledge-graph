@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 <div id="chat-log" class="chat-log">
 <div class="chat-message bot">
-<pre><code>Hello! I am your SEC Graph RAG assistant. Set your Gemini API key above to start querying, or try one of the suggestion questions below:</code></pre>
+<pre><code>Hello! I am your SEC Graph RAG assistant. Ask me anything about parent companies, CIKs, SIC codes, addresses, or subsidiaries, or click one of the quick questions below:</code></pre>
 </div>
 </div>
 <div class="chat-input-area">
@@ -607,11 +607,13 @@ document.addEventListener("DOMContentLoaded", function() {
     return msg;
   }
 
+  const DEFAULT_API_KEY = "";
+
   // Call Gemini API
   function queryGemini(userMessage) {
-    const apiKey = localStorage.getItem('gemini_api_key');
+    const apiKey = localStorage.getItem('gemini_api_key') || DEFAULT_API_KEY;
     if (!apiKey) {
-      appendMessage('bot', '⚠️ Please configure your Gemini API Key using the gear settings button above to enable Graph RAG chatbot queries.');
+      appendMessage('bot', '⚠️ Please configure your Gemini API Key using the ⚙️ API Key button above (or get a free 1-click key at <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>).');
       return;
     }
 
