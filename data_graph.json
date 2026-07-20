@@ -127,6 +127,50 @@
       "title": "Chief Financial Officer"
     },
     {
+      "id": "http://enterprise.org/ontology/sec#C",
+      "label": "CITIGROUP INC",
+      "group": "Corporation",
+      "cik": "831001",
+      "sic": "6021",
+      "sicDescription": "National Commercial Banks",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "388 GREENWICH STREET\nNEW YORK, NY 10013"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Jane_Fraser",
+      "label": "Jane Fraser (Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Mark_Mason",
+      "label": "Mark Mason (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BAC",
+      "label": "BANK OF AMERICA CORP /DE/",
+      "group": "Corporation",
+      "cik": "70858",
+      "sic": "6021",
+      "sicDescription": "National Commercial Banks",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "BANK OF AMERICA CORPORATE CENTER\n100 N TRYON ST\nCHARLOTTE, NC 28255"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Brian_Moynihan",
+      "label": "Brian Moynihan (Chairman and Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chairman and Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Alastair_Borthwick",
+      "label": "Alastair Borthwick (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
+    },
+    {
       "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
       "label": "The Goldman Sachs Group, Inc.",
       "group": "Subsidiary",
@@ -635,6 +679,402 @@
       "label": "Morgan Stanley Investment Management Limited",
       "group": "Subsidiary",
       "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Significant_Subsidiaries_of_Citigroup_Inc",
+      "label": "Significant Subsidiaries of Citigroup Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Exhibit 21.01"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#1",
+      "label": "1",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#2",
+      "label": "2",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#3",
+      "label": "3",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#4",
+      "label": "4",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#5",
+      "label": "5",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#6",
+      "label": "6",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#7",
+      "label": "7",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#8",
+      "label": "8",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Name",
+      "label": "Name",
+      "group": "Subsidiary",
+      "jurisdiction": "Jurisdiction"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BA_Continuum_India_Private_Limited",
+      "label": "BA Continuum India Private Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "India"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BA_Electronic_Data_Processing_Guangzhou_Ltd",
+      "label": "BA Electronic Data Processing (Guangzhou) Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "People's Republic of China"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BAC_Canada_Finance_Company",
+      "label": "BAC Canada Finance Company",
+      "group": "Subsidiary",
+      "jurisdiction": "Canada"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BAC_North_America_Holding_Company",
+      "label": "BAC North America Holding Company",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BAL_Investment__Advisory_LLC",
+      "label": "BAL Investment & Advisory, LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Banc_of_America_FSC_Holdings_Inc",
+      "label": "Banc of America FSC Holdings, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Banc_of_America_Leasing__Capital_LLC",
+      "label": "Banc of America Leasing & Capital, LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Banc_of_America_Public_Capital_Corp",
+      "label": "Banc of America Public Capital Corp",
+      "group": "Subsidiary",
+      "jurisdiction": "Kansas"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_California_National_Association",
+      "label": "Bank of America California, National Association",
+      "group": "Subsidiary",
+      "jurisdiction": "United States of America"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Europe_Designated_Activity_Company",
+      "label": "Bank of America Europe Designated Activity Company",
+      "group": "Subsidiary",
+      "jurisdiction": "Ireland"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Malaysia_Berhad",
+      "label": "Bank of America Malaysia Berhad",
+      "group": "Subsidiary",
+      "jurisdiction": "Malaysia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Merrill_Lynch_Banco_Mltiplo_SA",
+      "label": "Bank of America Merrill Lynch Banco M\u00faltiplo S.A.",
+      "group": "Subsidiary",
+      "jurisdiction": "Brazil"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Mexico_SA_Institucion_de_Banca_Multiple",
+      "label": "Bank of America Mexico, S.A., Institucion de Banca Multiple",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_National_Association",
+      "label": "Bank of America, National Association",
+      "group": "Subsidiary",
+      "jurisdiction": "United States of America"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Singapore_Limited",
+      "label": "Bank of America Singapore Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Singapore"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Bank_of_America_Yatirim_Bank_AS",
+      "label": "Bank of America Yatirim Bank A.S.",
+      "group": "Subsidiary",
+      "jurisdiction": "Turkey"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BankAmerica_International_Financial_Corporation",
+      "label": "BankAmerica International Financial Corporation",
+      "group": "Subsidiary",
+      "jurisdiction": "United States of America"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Blue_Ridge_Investments_LLC",
+      "label": "Blue Ridge Investments, L.L.C.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Finance_LLC",
+      "label": "BofA Finance LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Securities_Europe_SA",
+      "label": "BofA Securities Europe SA",
+      "group": "Subsidiary",
+      "jurisdiction": "France"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Securities_Inc",
+      "label": "BofA Securities, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Securities_India_Limited",
+      "label": "BofA Securities India Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "India"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Securities_Japan_Co_Ltd",
+      "label": "BofA Securities Japan Co., Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#BofA_Securities_Prime_Inc",
+      "label": "BofA Securities Prime, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Managed_Account_Advisors_LLC",
+      "label": "Managed Account Advisors LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Asia_Pacific_Limited",
+      "label": "Merrill Lynch (Asia Pacific) Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Hong Kong"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Australia_Futures_Limited",
+      "label": "Merrill Lynch (Australia) Futures Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Australia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Singapore_Pte_Ltd",
+      "label": "Merrill Lynch (Singapore) Pte. Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Singapore"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Argentina_SA",
+      "label": "Merrill Lynch Argentina S.A.",
+      "group": "Subsidiary",
+      "jurisdiction": "Argentina"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_BV",
+      "label": "Merrill Lynch B.V.",
+      "group": "Subsidiary",
+      "jurisdiction": "Netherlands"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Bank_and_Trust_Company_Cayman_Limited",
+      "label": "Merrill Lynch Bank and Trust Company (Cayman) Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Cayman Islands"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Canada_Inc",
+      "label": "Merrill Lynch Canada Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Canada"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Capital_Services_Inc",
+      "label": "Merrill Lynch Capital Services, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Commodities_Canada_ULC",
+      "label": "Merrill Lynch Commodities Canada, ULC",
+      "group": "Subsidiary",
+      "jurisdiction": "Canada"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Commodities_Inc",
+      "label": "Merrill Lynch Commodities, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Corredores_de_Bolsa_SpA",
+      "label": "Merrill Lynch Corredores de Bolsa SpA",
+      "group": "Subsidiary",
+      "jurisdiction": "Chile"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Equities_Australia_Limited",
+      "label": "Merrill Lynch Equities (Australia) Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Australia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Far_East_Limited",
+      "label": "Merrill Lynch Far East Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Hong Kong"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Global_Services_Pte_Ltd",
+      "label": "Merrill Lynch Global Services Pte. Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Singapore"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_International",
+      "label": "Merrill Lynch International",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_International_LLC",
+      "label": "Merrill Lynch International, LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Israel_Ltd",
+      "label": "Merrill Lynch Israel Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Israel"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Kingdom_of_Saudi_Arabia_Company",
+      "label": "Merrill Lynch, Kingdom of Saudi Arabia Company",
+      "group": "Subsidiary",
+      "jurisdiction": "Saudi Arabia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Malaysian_Advisory_Sdn_Bhd",
+      "label": "Merrill Lynch Malaysian Advisory Sdn. Bhd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Malaysia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Markets_Australia_Pty_Limited",
+      "label": "Merrill Lynch Markets (Australia) Pty. Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Australia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Mexico_SA_de_CV_Casa_de_Bolsa",
+      "label": "Merrill Lynch Mexico, S.A. de C.V., Casa de Bolsa",
+      "group": "Subsidiary",
+      "jurisdiction": "Mexico"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Pierce_Fenner__Smith_Incorporated",
+      "label": "Merrill Lynch, Pierce, Fenner & Smith Incorporated",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_SA_Corretora_de_Ttulos_e_Valores_Mobilirios",
+      "label": "Merrill Lynch S.A. Corretora de T\u00edtulos e Valores Mobili\u00e1rios",
+      "group": "Subsidiary",
+      "jurisdiction": "Brazil"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Securities_Taiwan_Ltd",
+      "label": "Merrill Lynch Securities (Taiwan) Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Taiwan"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_Securities_Thailand_Limited",
+      "label": "Merrill Lynch Securities (Thailand) Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "Thailand"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Merrill_Lynch_South_Africa_Proprietary_Limited",
+      "label": "Merrill Lynch South Africa Proprietary Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "South Africa"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Mortgages_plc",
+      "label": "Mortgages plc",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#NB_Holdings_Corporation",
+      "label": "NB Holdings Corporation",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#PT_Merrill_Lynch_Sekuritas_Indonesia",
+      "label": "PT Merrill Lynch Sekuritas Indonesia",
+      "group": "Subsidiary",
+      "jurisdiction": "Indonesia"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#US_Trust_Company_of_Delaware",
+      "label": "U.S. Trust Company of Delaware",
+      "group": "Subsidiary",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Wave_Lending_Limited",
+      "label": "Wave Lending Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
     }
   ],
   "edges": [
@@ -744,6 +1184,70 @@
     },
     {
       "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Industry_6021"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Exec_Jane_Fraser"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Exec_Mark_Mason"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Industry_6021"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Exec_Brian_Moynihan"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Exec_Alastair_Borthwick"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
       "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
     },
     {
@@ -1085,6 +1589,270 @@
     {
       "from": "http://enterprise.org/ontology/sec#MS",
       "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#Significant_Subsidiaries_of_Citigroup_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#1"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#2"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#3"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#4"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#5"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#6"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#7"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#C",
+      "to": "http://enterprise.org/ontology/sec#8"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Name"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BA_Continuum_India_Private_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BA_Electronic_Data_Processing_Guangzhou_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BAC_Canada_Finance_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BAC_North_America_Holding_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BAL_Investment__Advisory_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Banc_of_America_FSC_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Banc_of_America_Leasing__Capital_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Banc_of_America_Public_Capital_Corp"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_California_National_Association"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Europe_Designated_Activity_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Malaysia_Berhad"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Merrill_Lynch_Banco_Mltiplo_SA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Mexico_SA_Institucion_de_Banca_Multiple"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_National_Association"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Singapore_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Bank_of_America_Yatirim_Bank_AS"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BankAmerica_International_Financial_Corporation"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Blue_Ridge_Investments_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Finance_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Securities_Europe_SA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Securities_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Securities_India_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Securities_Japan_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#BofA_Securities_Prime_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Managed_Account_Advisors_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Asia_Pacific_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Australia_Futures_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Singapore_Pte_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Argentina_SA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_BV"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Bank_and_Trust_Company_Cayman_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Canada_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Capital_Services_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Commodities_Canada_ULC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Commodities_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Corredores_de_Bolsa_SpA"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Equities_Australia_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Far_East_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Global_Services_Pte_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_International"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_International_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Israel_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Kingdom_of_Saudi_Arabia_Company"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Malaysian_Advisory_Sdn_Bhd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Markets_Australia_Pty_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Mexico_SA_de_CV_Casa_de_Bolsa"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Pierce_Fenner__Smith_Incorporated"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_SA_Corretora_de_Ttulos_e_Valores_Mobilirios"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Securities_Taiwan_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_Securities_Thailand_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Merrill_Lynch_South_Africa_Proprietary_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Mortgages_plc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#NB_Holdings_Corporation"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#PT_Merrill_Lynch_Sekuritas_Indonesia"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#US_Trust_Company_of_Delaware"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#BAC",
+      "to": "http://enterprise.org/ontology/sec#Wave_Lending_Limited"
     }
   ]
 }

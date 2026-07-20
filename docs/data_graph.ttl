@@ -31,15 +31,175 @@ sec:sicDescription a owl:DatatypeProperty .
 
 sec:stateOfIncorporation a owl:DatatypeProperty .
 
+sec:1 a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "1" ;
+    sec:isOwnedBy sec:C .
+
+sec:2 a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "2" ;
+    sec:isOwnedBy sec:C .
+
+sec:3 a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "3" ;
+    sec:isOwnedBy sec:C .
+
+sec:4 a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "4" ;
+    sec:isOwnedBy sec:C .
+
+sec:5 a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "5" ;
+    sec:isOwnedBy sec:C .
+
+sec:6 a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "6" ;
+    sec:isOwnedBy sec:C .
+
+sec:7 a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "7" ;
+    sec:isOwnedBy sec:C .
+
+sec:8 a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "8" ;
+    sec:isOwnedBy sec:C .
+
 sec:ALQ_Holdings_Del_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "Delaware" ;
     sec:hasName "ALQ Holdings (Del) LLC" ;
     sec:isOwnedBy sec:GS .
 
+sec:BAC_Canada_Finance_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Canada" ;
+    sec:hasName "BAC Canada Finance Company" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BAC_North_America_Holding_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BAC North America Holding Company" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BAL_Investment__Advisory_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BAL Investment & Advisory, LLC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BA_Continuum_India_Private_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "India" ;
+    sec:hasName "BA Continuum India Private Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BA_Electronic_Data_Processing_Guangzhou_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "People's Republic of China" ;
+    sec:hasName "BA Electronic Data Processing (Guangzhou) Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
 sec:BSCH_Global_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "Delaware" ;
     sec:hasName "BSCH Global LLC" ;
     sec:isOwnedBy sec:GS .
+
+sec:Banc_of_America_FSC_Holdings_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Banc of America FSC Holdings, Inc." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Banc_of_America_Leasing__Capital_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Banc of America Leasing & Capital, LLC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Banc_of_America_Public_Capital_Corp a sec:Subsidiary ;
+    sec:hasJurisdiction "Kansas" ;
+    sec:hasName "Banc of America Public Capital Corp" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BankAmerica_International_Financial_Corporation a sec:Subsidiary ;
+    sec:hasJurisdiction "United States of America" ;
+    sec:hasName "BankAmerica International Financial Corporation" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_California_National_Association a sec:Subsidiary ;
+    sec:hasJurisdiction "United States of America" ;
+    sec:hasName "Bank of America California, National Association" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Europe_Designated_Activity_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Ireland" ;
+    sec:hasName "Bank of America Europe Designated Activity Company" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Malaysia_Berhad a sec:Subsidiary ;
+    sec:hasJurisdiction "Malaysia" ;
+    sec:hasName "Bank of America Malaysia Berhad" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Merrill_Lynch_Banco_Mltiplo_SA a sec:Subsidiary ;
+    sec:hasJurisdiction "Brazil" ;
+    sec:hasName "Bank of America Merrill Lynch Banco Múltiplo S.A." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Mexico_SA_Institucion_de_Banca_Multiple a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "Bank of America Mexico, S.A., Institucion de Banca Multiple" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_National_Association a sec:Subsidiary ;
+    sec:hasJurisdiction "United States of America" ;
+    sec:hasName "Bank of America, National Association" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Singapore_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Singapore" ;
+    sec:hasName "Bank of America Singapore Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Bank_of_America_Yatirim_Bank_AS a sec:Subsidiary ;
+    sec:hasJurisdiction "Turkey" ;
+    sec:hasName "Bank of America Yatirim Bank A.S." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Blue_Ridge_Investments_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Blue Ridge Investments, L.L.C." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Finance_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BofA Finance LLC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Securities_Europe_SA a sec:Subsidiary ;
+    sec:hasJurisdiction "France" ;
+    sec:hasName "BofA Securities Europe SA" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Securities_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BofA Securities, Inc." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Securities_India_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "India" ;
+    sec:hasName "BofA Securities India Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Securities_Japan_Co_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Japan" ;
+    sec:hasName "BofA Securities Japan Co., Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:BofA_Securities_Prime_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BofA Securities Prime, Inc." ;
+    sec:isOwnedBy sec:BAC .
 
 sec:Broad_Street_Principal_Investments_Superholdco_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "Delaware" ;
@@ -50,6 +210,16 @@ sec:Company a sec:Subsidiary ;
     sec:hasJurisdiction "Jurisdiction of Incorporation or Formation" ;
     sec:hasName "Company" ;
     sec:isOwnedBy sec:MS .
+
+sec:Exec_Alastair_Borthwick a sec:Executive ;
+    sec:hasName "Alastair Borthwick" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:BAC .
+
+sec:Exec_Brian_Moynihan a sec:Executive ;
+    sec:hasName "Brian Moynihan" ;
+    sec:hasTitle "Chairman and Chief Executive Officer" ;
+    sec:isExecutiveOf sec:BAC .
 
 sec:Exec_Daniel_Pinto a sec:Executive ;
     sec:hasName "Daniel Pinto" ;
@@ -76,6 +246,11 @@ sec:Exec_Jamie_Dimon a sec:Executive ;
     sec:hasTitle "Chairman and Chief Executive Officer" ;
     sec:isExecutiveOf sec:JPM .
 
+sec:Exec_Jane_Fraser a sec:Executive ;
+    sec:hasName "Jane Fraser" ;
+    sec:hasTitle "Chief Executive Officer" ;
+    sec:isExecutiveOf sec:C .
+
 sec:Exec_Jeremy_Barnum a sec:Executive ;
     sec:hasName "Jeremy Barnum" ;
     sec:hasTitle "Chief Financial Officer" ;
@@ -85,6 +260,11 @@ sec:Exec_John_E_Waldron a sec:Executive ;
     sec:hasName "John E. Waldron" ;
     sec:hasTitle "President and Chief Operating Officer" ;
     sec:isExecutiveOf sec:GS .
+
+sec:Exec_Mark_Mason a sec:Executive ;
+    sec:hasName "Mark Mason" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:C .
 
 sec:Exec_Sharon_Yeshaya a sec:Executive ;
     sec:hasName "Sharon Yeshaya" ;
@@ -286,10 +466,6 @@ sec:Goldman_Sachs__Co_LLC a sec:Subsidiary ;
     sec:hasName "Goldman Sachs & Co. LLC" ;
     sec:isOwnedBy sec:GS .
 
-sec:Industry_6021 a sec:Industry ;
-    sec:hasName "National Commercial Banks" ;
-    sec:sicCode "6021" .
-
 sec:JPMorgan_Asset_Management_Europe_S_rl a sec:Subsidiary ;
     sec:hasJurisdiction "Luxembourg" ;
     sec:hasName "JPMorgan Asset Management (Europe) S.à r.l." ;
@@ -379,6 +555,141 @@ sec:J_Aron__Company_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "New York" ;
     sec:hasName "J. Aron & Company LLC" ;
     sec:isOwnedBy sec:GS .
+
+sec:Managed_Account_Advisors_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Managed Account Advisors LLC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Argentina_SA a sec:Subsidiary ;
+    sec:hasJurisdiction "Argentina" ;
+    sec:hasName "Merrill Lynch Argentina S.A." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Asia_Pacific_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Hong Kong" ;
+    sec:hasName "Merrill Lynch (Asia Pacific) Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Australia_Futures_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Australia" ;
+    sec:hasName "Merrill Lynch (Australia) Futures Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Merrill Lynch B.V." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Bank_and_Trust_Company_Cayman_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Cayman Islands" ;
+    sec:hasName "Merrill Lynch Bank and Trust Company (Cayman) Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Canada_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Canada" ;
+    sec:hasName "Merrill Lynch Canada Inc." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Capital_Services_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Merrill Lynch Capital Services, Inc." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Commodities_Canada_ULC a sec:Subsidiary ;
+    sec:hasJurisdiction "Canada" ;
+    sec:hasName "Merrill Lynch Commodities Canada, ULC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Commodities_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Merrill Lynch Commodities, Inc." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Corredores_de_Bolsa_SpA a sec:Subsidiary ;
+    sec:hasJurisdiction "Chile" ;
+    sec:hasName "Merrill Lynch Corredores de Bolsa SpA" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Equities_Australia_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Australia" ;
+    sec:hasName "Merrill Lynch Equities (Australia) Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Far_East_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Hong Kong" ;
+    sec:hasName "Merrill Lynch Far East Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Global_Services_Pte_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Singapore" ;
+    sec:hasName "Merrill Lynch Global Services Pte. Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_International a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Merrill Lynch International" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_International_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Merrill Lynch International, LLC" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Israel_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Israel" ;
+    sec:hasName "Merrill Lynch Israel Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Kingdom_of_Saudi_Arabia_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Saudi Arabia" ;
+    sec:hasName "Merrill Lynch, Kingdom of Saudi Arabia Company" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Malaysian_Advisory_Sdn_Bhd a sec:Subsidiary ;
+    sec:hasJurisdiction "Malaysia" ;
+    sec:hasName "Merrill Lynch Malaysian Advisory Sdn. Bhd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Markets_Australia_Pty_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Australia" ;
+    sec:hasName "Merrill Lynch Markets (Australia) Pty. Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Mexico_SA_de_CV_Casa_de_Bolsa a sec:Subsidiary ;
+    sec:hasJurisdiction "Mexico" ;
+    sec:hasName "Merrill Lynch Mexico, S.A. de C.V., Casa de Bolsa" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Pierce_Fenner__Smith_Incorporated a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Merrill Lynch, Pierce, Fenner & Smith Incorporated" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_SA_Corretora_de_Ttulos_e_Valores_Mobilirios a sec:Subsidiary ;
+    sec:hasJurisdiction "Brazil" ;
+    sec:hasName "Merrill Lynch S.A. Corretora de Títulos e Valores Mobiliários" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Securities_Taiwan_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Taiwan" ;
+    sec:hasName "Merrill Lynch Securities (Taiwan) Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Securities_Thailand_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "Thailand" ;
+    sec:hasName "Merrill Lynch Securities (Thailand) Limited" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_Singapore_Pte_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Singapore" ;
+    sec:hasName "Merrill Lynch (Singapore) Pte. Ltd." ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Merrill_Lynch_South_Africa_Proprietary_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "South Africa" ;
+    sec:hasName "Merrill Lynch South Africa Proprietary Limited" ;
+    sec:isOwnedBy sec:BAC .
 
 sec:Morgan_Stanley a sec:Subsidiary ;
     sec:hasJurisdiction "United States" ;
@@ -485,15 +796,40 @@ sec:Morgan_Stanley__Co_LLC a sec:Subsidiary ;
     sec:hasName "Morgan Stanley & Co. LLC" ;
     sec:isOwnedBy sec:MS .
 
+sec:Mortgages_plc a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Mortgages plc" ;
+    sec:isOwnedBy sec:BAC .
+
 sec:Murray_Street_Corporation a sec:Subsidiary ;
     sec:hasJurisdiction "Delaware" ;
     sec:hasName "Murray Street Corporation" ;
     sec:isOwnedBy sec:GS .
 
+sec:NB_Holdings_Corporation a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "NB Holdings Corporation" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Name a sec:Subsidiary ;
+    sec:hasJurisdiction "Jurisdiction" ;
+    sec:hasName "Name" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:PT_Merrill_Lynch_Sekuritas_Indonesia a sec:Subsidiary ;
+    sec:hasJurisdiction "Indonesia" ;
+    sec:hasName "PT Merrill Lynch Sekuritas Indonesia" ;
+    sec:isOwnedBy sec:BAC .
+
 sec:Paymentech_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "United States" ;
     sec:hasName "Paymentech, LLC" ;
     sec:isOwnedBy sec:JPM .
+
+sec:Significant_Subsidiaries_of_Citigroup_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Exhibit 21.01" ;
+    sec:hasName "Significant Subsidiaries of Citigroup Inc." ;
+    sec:isOwnedBy sec:C .
 
 sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado a sec:Subsidiary ;
     sec:hasJurisdiction "Brazil" ;
@@ -505,6 +841,16 @@ sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
     sec:hasName "The Goldman Sachs Group, Inc." ;
     sec:isOwnedBy sec:GS .
 
+sec:US_Trust_Company_of_Delaware a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "U.S. Trust Company of Delaware" ;
+    sec:isOwnedBy sec:BAC .
+
+sec:Wave_Lending_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Wave Lending Limited" ;
+    sec:isOwnedBy sec:BAC .
+
 sec:isExecutiveOf a owl:ObjectProperty .
 
 sec:isOwnedBy a owl:FunctionalProperty,
@@ -515,6 +861,12 @@ sec:Industry a owl:Class .
 sec:Industry_6211 a sec:Industry ;
     sec:hasName "Security Brokers, Dealers & Flotation Companies" ;
     sec:sicCode "6211" .
+
+sec:Industry_6021 a sec:Industry ;
+    sec:hasName "National Commercial Banks" ;
+    sec:sicCode "6021" .
+
+sec:RiskFactor a owl:Class .
 
 sec:Risk_Credit__Counterparty_Default a sec:RiskFactor ;
     sec:hasName "Credit & Counterparty Default" ;
@@ -536,7 +888,31 @@ sec:Risk_Regulatory_Compliance__Legal_Risk a sec:RiskFactor ;
     sec:hasName "Regulatory Compliance & Legal Risk" ;
     sec:riskCategory "Regulatory Compliance & Legal Risk" .
 
-sec:RiskFactor a owl:Class .
+sec:C a sec:Corporation ;
+    sec:businessAddress """388 GREENWICH STREET
+NEW YORK, NY 10013""" ;
+    sec:cik "831001" ;
+    sec:hasExecutive sec:Exec_Jane_Fraser,
+        sec:Exec_Mark_Mason ;
+    sec:hasName "CITIGROUP INC" ;
+    sec:operatesInIndustry sec:Industry_6021 ;
+    sec:ownsSubsidiary sec:1,
+        sec:2,
+        sec:3,
+        sec:4,
+        sec:5,
+        sec:6,
+        sec:7,
+        sec:8,
+        sec:Significant_Subsidiaries_of_Citigroup_Inc ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
+    sec:sic "6021" ;
+    sec:sicDescription "National Commercial Banks" ;
+    sec:stateOfIncorporation "DE" .
 
 sec:Executive a owl:Class .
 
@@ -677,5 +1053,80 @@ NEW YORK, NY 10282""" ;
         sec:Risk_Regulatory_Compliance__Legal_Risk ;
     sec:sic "6211" ;
     sec:sicDescription "Security Brokers, Dealers & Flotation Companies" ;
+    sec:stateOfIncorporation "DE" .
+
+sec:BAC a sec:Corporation ;
+    sec:businessAddress """BANK OF AMERICA CORPORATE CENTER
+100 N TRYON ST
+CHARLOTTE, NC 28255""" ;
+    sec:cik "70858" ;
+    sec:hasExecutive sec:Exec_Alastair_Borthwick,
+        sec:Exec_Brian_Moynihan ;
+    sec:hasName "BANK OF AMERICA CORP /DE/" ;
+    sec:operatesInIndustry sec:Industry_6021 ;
+    sec:ownsSubsidiary sec:BAC_Canada_Finance_Company,
+        sec:BAC_North_America_Holding_Company,
+        sec:BAL_Investment__Advisory_LLC,
+        sec:BA_Continuum_India_Private_Limited,
+        sec:BA_Electronic_Data_Processing_Guangzhou_Ltd,
+        sec:Banc_of_America_FSC_Holdings_Inc,
+        sec:Banc_of_America_Leasing__Capital_LLC,
+        sec:Banc_of_America_Public_Capital_Corp,
+        sec:BankAmerica_International_Financial_Corporation,
+        sec:Bank_of_America_California_National_Association,
+        sec:Bank_of_America_Europe_Designated_Activity_Company,
+        sec:Bank_of_America_Malaysia_Berhad,
+        sec:Bank_of_America_Merrill_Lynch_Banco_Mltiplo_SA,
+        sec:Bank_of_America_Mexico_SA_Institucion_de_Banca_Multiple,
+        sec:Bank_of_America_National_Association,
+        sec:Bank_of_America_Singapore_Limited,
+        sec:Bank_of_America_Yatirim_Bank_AS,
+        sec:Blue_Ridge_Investments_LLC,
+        sec:BofA_Finance_LLC,
+        sec:BofA_Securities_Europe_SA,
+        sec:BofA_Securities_Inc,
+        sec:BofA_Securities_India_Limited,
+        sec:BofA_Securities_Japan_Co_Ltd,
+        sec:BofA_Securities_Prime_Inc,
+        sec:Managed_Account_Advisors_LLC,
+        sec:Merrill_Lynch_Argentina_SA,
+        sec:Merrill_Lynch_Asia_Pacific_Limited,
+        sec:Merrill_Lynch_Australia_Futures_Limited,
+        sec:Merrill_Lynch_BV,
+        sec:Merrill_Lynch_Bank_and_Trust_Company_Cayman_Limited,
+        sec:Merrill_Lynch_Canada_Inc,
+        sec:Merrill_Lynch_Capital_Services_Inc,
+        sec:Merrill_Lynch_Commodities_Canada_ULC,
+        sec:Merrill_Lynch_Commodities_Inc,
+        sec:Merrill_Lynch_Corredores_de_Bolsa_SpA,
+        sec:Merrill_Lynch_Equities_Australia_Limited,
+        sec:Merrill_Lynch_Far_East_Limited,
+        sec:Merrill_Lynch_Global_Services_Pte_Ltd,
+        sec:Merrill_Lynch_International,
+        sec:Merrill_Lynch_International_LLC,
+        sec:Merrill_Lynch_Israel_Ltd,
+        sec:Merrill_Lynch_Kingdom_of_Saudi_Arabia_Company,
+        sec:Merrill_Lynch_Malaysian_Advisory_Sdn_Bhd,
+        sec:Merrill_Lynch_Markets_Australia_Pty_Limited,
+        sec:Merrill_Lynch_Mexico_SA_de_CV_Casa_de_Bolsa,
+        sec:Merrill_Lynch_Pierce_Fenner__Smith_Incorporated,
+        sec:Merrill_Lynch_SA_Corretora_de_Ttulos_e_Valores_Mobilirios,
+        sec:Merrill_Lynch_Securities_Taiwan_Ltd,
+        sec:Merrill_Lynch_Securities_Thailand_Limited,
+        sec:Merrill_Lynch_Singapore_Pte_Ltd,
+        sec:Merrill_Lynch_South_Africa_Proprietary_Limited,
+        sec:Mortgages_plc,
+        sec:NB_Holdings_Corporation,
+        sec:Name,
+        sec:PT_Merrill_Lynch_Sekuritas_Indonesia,
+        sec:US_Trust_Company_of_Delaware,
+        sec:Wave_Lending_Limited ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
+    sec:sic "6021" ;
+    sec:sicDescription "National Commercial Banks" ;
     sec:stateOfIncorporation "DE" .
 
