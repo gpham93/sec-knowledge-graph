@@ -1,0 +1,681 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sec: <http://enterprise.org/ontology/sec#> .
+
+sec:businessAddress a owl:DatatypeProperty .
+
+sec:cik a owl:DatatypeProperty .
+
+sec:hasExecutive a owl:ObjectProperty ;
+    owl:inverseOf sec:isExecutiveOf .
+
+sec:hasJurisdiction a owl:DatatypeProperty .
+
+sec:hasName a owl:DatatypeProperty .
+
+sec:hasTitle a owl:DatatypeProperty .
+
+sec:operatesInIndustry a owl:ObjectProperty .
+
+sec:ownsSubsidiary a owl:ObjectProperty ;
+    owl:inverseOf sec:isOwnedBy .
+
+sec:reportsRisk a owl:ObjectProperty .
+
+sec:riskCategory a owl:DatatypeProperty .
+
+sec:sic a owl:DatatypeProperty .
+
+sec:sicCode a owl:DatatypeProperty .
+
+sec:sicDescription a owl:DatatypeProperty .
+
+sec:stateOfIncorporation a owl:DatatypeProperty .
+
+sec:ALQ_Holdings_Del_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "ALQ Holdings (Del) LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:BSCH_Global_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "BSCH Global LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Broad_Street_Principal_Investments_Superholdco_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Broad Street Principal Investments Superholdco LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Jurisdiction of Incorporation or Formation" ;
+    sec:hasName "Company" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Exec_Daniel_Pinto a sec:Executive ;
+    sec:hasName "Daniel Pinto" ;
+    sec:hasTitle "President and Chief Operating Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_David_M_Solomon a sec:Executive ;
+    sec:hasName "David M. Solomon" ;
+    sec:hasTitle "Chairman and Chief Executive Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_Denis_P_Coleman_III a sec:Executive ;
+    sec:hasName "Denis P. Coleman III" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_James_P_Gorman a sec:Executive ;
+    sec:hasName "James P. Gorman" ;
+    sec:hasTitle "Executive Chairman" ;
+    sec:isExecutiveOf sec:MS .
+
+sec:Exec_Jamie_Dimon a sec:Executive ;
+    sec:hasName "Jamie Dimon" ;
+    sec:hasTitle "Chairman and Chief Executive Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_Jeremy_Barnum a sec:Executive ;
+    sec:hasName "Jeremy Barnum" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_John_E_Waldron a sec:Executive ;
+    sec:hasName "John E. Waldron" ;
+    sec:hasTitle "President and Chief Operating Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_Sharon_Yeshaya a sec:Executive ;
+    sec:hasName "Sharon Yeshaya" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:MS .
+
+sec:Exec_Ted_Pick a sec:Executive ;
+    sec:hasName "Ted Pick" ;
+    sec:hasTitle "Chief Executive Officer" ;
+    sec:isExecutiveOf sec:MS .
+
+sec:GLQ_Holdings_UK_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "GLQ Holdings (UK) Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_International_Holdings_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Jersey" ;
+    sec:hasName "GLQ International Holdings Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_International_Partners_LP a sec:Subsidiary ;
+    sec:hasJurisdiction "Jersey" ;
+    sec:hasName "GLQ International Partners LP" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GLQ_Nova_Global_Designated_Activity_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "Ireland" ;
+    sec:hasName "GLQ Nova Global Designated Activity Company" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GSAM_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "GSAM Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GSSG_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "GSSG Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_European_Funding_I_SA_RL_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "GS European Funding I S.A R.L. LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_Financial_Services_II_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "GS Financial Services II, LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:GS_Lending_Partners_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "GS Lending Partners Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asia_Corporate_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs (Asia) Corporate Holdings L.L.C." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Goldman Sachs Asset Management B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Goldman Sachs Asset Management Holdings B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_II_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Goldman Sachs Asset Management Holdings II B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_Holdings_I_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Goldman Sachs Asset Management Holdings I B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_International_Holdings_BV a sec:Subsidiary ;
+    sec:hasJurisdiction "Netherlands" ;
+    sec:hasName "Goldman Sachs Asset Management International Holdings B.V." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_LP a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Asset Management, L.P." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs Asset Management UK Holdings II Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs Asset Management UK Holdings I Ltd" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Bank_Europe_SE a sec:Subsidiary ;
+    sec:hasJurisdiction "Germany" ;
+    sec:hasName "Goldman Sachs Bank Europe SE" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Bank_USA a sec:Subsidiary ;
+    sec:hasJurisdiction "New York" ;
+    sec:hasName "Goldman Sachs Bank USA" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Canada_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Canada Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Canada_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Canada" ;
+    sec:hasName "Goldman Sachs Canada Inc." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Funding_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Funding LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_III_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs Global Funding III Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_II_LTD a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs Global Funding II LTD" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Global_Funding_I_CO a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Global Funding I, CO." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Group_UK_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs Group UK Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_International a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs International" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_International_Bank a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs International Bank" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Japan_Co_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Japan" ;
+    sec:hasName "Goldman Sachs Japan Co., Ltd." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Japan_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "British Virgin Islands" ;
+    sec:hasName "Goldman Sachs (Japan) Ltd." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Lending_Partners_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Lending Partners LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_Mortgage_Company a sec:Subsidiary ;
+    sec:hasJurisdiction "New York" ;
+    sec:hasName "Goldman Sachs Mortgage Company" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_NonUS_Americas_Holdings_II_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Non-US Americas Holdings II LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_NonUS_Americas_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs Non-US Americas Holdings LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_UK_Funding_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Goldman Sachs UK Funding Limited" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs_UK_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Goldman Sachs (UK) L.L.C." ;
+    sec:isOwnedBy sec:GS .
+
+sec:Goldman_Sachs__Co_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "New York" ;
+    sec:hasName "Goldman Sachs & Co. LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Industry_6021 a sec:Industry ;
+    sec:hasName "National Commercial Banks" ;
+    sec:sicCode "6021" .
+
+sec:JPMorgan_Asset_Management_Europe_S_rl a sec:Subsidiary ;
+    sec:hasJurisdiction "Luxembourg" ;
+    sec:hasName "JPMorgan Asset Management (Europe) S.à r.l." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Asset_Management_Holdings_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "JPMorgan Asset Management Holdings Inc." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl a sec:Subsidiary ;
+    sec:hasJurisdiction "Luxembourg" ;
+    sec:hasName "JPMorgan Asset Management Holdings (Luxembourg) S.à r.l." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Asset_Management_International_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "JPMorgan Asset Management International Limited" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Asset_Management_UK_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "JPMorgan Asset Management (UK) Limited" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Chase_Bank_National_Association a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "JPMorgan Chase Bank, National Association" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Chase_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "JPMorgan Chase Holdings LLC" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Distribution_Services_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "JPMorgan Distribution Services, Inc." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JPMorgan_Securities_Japan_Co_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Japan" ;
+    sec:hasName "JPMorgan Securities Japan Co., Ltd." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_BrokerDealer_Holdings_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "J.P. Morgan Broker-Dealer Holdings Inc." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_Capital_Holdings_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "J.P. Morgan Capital Holdings Limited" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_International_Finance_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "J.P. Morgan International Finance Limited" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_Investment_Management_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "J.P. Morgan Investment Management Inc." ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_SE a sec:Subsidiary ;
+    sec:hasJurisdiction "Germany" ;
+    sec:hasName "J.P. Morgan SE" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_Securities_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "J.P. Morgan Securities LLC" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_Securities_plc a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "J.P. Morgan Securities plc" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:JP_Morgan_Services_India_Private_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "India" ;
+    sec:hasName "J.P. Morgan Services India Private Limited" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:J_Aron__Company_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "New York" ;
+    sec:hasName "J. Aron & Company LLC" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Morgan_Stanley a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Bank_AG a sec:Subsidiary ;
+    sec:hasJurisdiction "Germany" ;
+    sec:hasName "Morgan Stanley Bank AG" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Bank_NA a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Bank, N.A." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Capital_Group_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Capital Group Inc." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Capital_Management_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Capital Management, LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Capital_Services_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Capital Services LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Domestic_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Domestic Holdings, LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Europe_SE a sec:Subsidiary ;
+    sec:hasJurisdiction "Germany" ;
+    sec:hasName "Morgan Stanley Europe SE" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Finance_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Finance LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Holdings_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Holdings LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_International_Holdings_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley International Holdings Inc." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_International_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Morgan Stanley International Limited" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Investment_Management_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Investment Management Inc." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Investment_Management_Limited a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Morgan Stanley Investment Management Limited" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Investments_UK a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Morgan Stanley Investments (UK)" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Japan_Holdings_Co_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Japan" ;
+    sec:hasName "Morgan Stanley Japan Holdings Co., Ltd." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_MUFG_Securities_Co_Ltd a sec:Subsidiary ;
+    sec:hasJurisdiction "Japan" ;
+    sec:hasName "Morgan Stanley MUFG Securities Co., Ltd." ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Private_Bank_National_Association a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Private Bank, National Association" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley_Smith_Barney_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley Smith Barney LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley__Co_International_plc a sec:Subsidiary ;
+    sec:hasJurisdiction "United Kingdom" ;
+    sec:hasName "Morgan Stanley & Co. International plc" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Morgan_Stanley__Co_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Morgan Stanley & Co. LLC" ;
+    sec:isOwnedBy sec:MS .
+
+sec:Murray_Street_Corporation a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "Murray Street Corporation" ;
+    sec:isOwnedBy sec:GS .
+
+sec:Paymentech_LLC a sec:Subsidiary ;
+    sec:hasJurisdiction "United States" ;
+    sec:hasName "Paymentech, LLC" ;
+    sec:isOwnedBy sec:JPM .
+
+sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado a sec:Subsidiary ;
+    sec:hasJurisdiction "Brazil" ;
+    sec:hasName "Sphere Fundo De Investimento Multimercado - Investimento No Exterior Credito Privado" ;
+    sec:isOwnedBy sec:GS .
+
+sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
+    sec:hasJurisdiction "Delaware" ;
+    sec:hasName "The Goldman Sachs Group, Inc." ;
+    sec:isOwnedBy sec:GS .
+
+sec:isExecutiveOf a owl:ObjectProperty .
+
+sec:isOwnedBy a owl:FunctionalProperty,
+        owl:ObjectProperty .
+
+sec:Industry a owl:Class .
+
+sec:Industry_6211 a sec:Industry ;
+    sec:hasName "Security Brokers, Dealers & Flotation Companies" ;
+    sec:sicCode "6211" .
+
+sec:Risk_Credit__Counterparty_Default a sec:RiskFactor ;
+    sec:hasName "Credit & Counterparty Default" ;
+    sec:riskCategory "Credit & Counterparty Default" .
+
+sec:Risk_Cybersecurity__Operational_Risk a sec:RiskFactor ;
+    sec:hasName "Cybersecurity & Operational Risk" ;
+    sec:riskCategory "Cybersecurity & Operational Risk" .
+
+sec:Risk_Macroeconomic__Geopolitical_Risk a sec:RiskFactor ;
+    sec:hasName "Macroeconomic & Geopolitical Risk" ;
+    sec:riskCategory "Macroeconomic & Geopolitical Risk" .
+
+sec:Risk_Market__Liquidity_Volatility a sec:RiskFactor ;
+    sec:hasName "Market & Liquidity Volatility" ;
+    sec:riskCategory "Market & Liquidity Volatility" .
+
+sec:Risk_Regulatory_Compliance__Legal_Risk a sec:RiskFactor ;
+    sec:hasName "Regulatory Compliance & Legal Risk" ;
+    sec:riskCategory "Regulatory Compliance & Legal Risk" .
+
+sec:RiskFactor a owl:Class .
+
+sec:Executive a owl:Class .
+
+sec:JPM a sec:Corporation ;
+    sec:businessAddress """270 PARK AVENUE
+NEW YORK, NY 10017""" ;
+    sec:cik "19617" ;
+    sec:hasExecutive sec:Exec_Daniel_Pinto,
+        sec:Exec_Jamie_Dimon,
+        sec:Exec_Jeremy_Barnum ;
+    sec:hasName "JPMORGAN CHASE & CO" ;
+    sec:operatesInIndustry sec:Industry_6021 ;
+    sec:ownsSubsidiary sec:JPMorgan_Asset_Management_Europe_S_rl,
+        sec:JPMorgan_Asset_Management_Holdings_Inc,
+        sec:JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl,
+        sec:JPMorgan_Asset_Management_International_Limited,
+        sec:JPMorgan_Asset_Management_UK_Limited,
+        sec:JPMorgan_Chase_Bank_National_Association,
+        sec:JPMorgan_Chase_Holdings_LLC,
+        sec:JPMorgan_Distribution_Services_Inc,
+        sec:JPMorgan_Securities_Japan_Co_Ltd,
+        sec:JP_Morgan_BrokerDealer_Holdings_Inc,
+        sec:JP_Morgan_Capital_Holdings_Limited,
+        sec:JP_Morgan_International_Finance_Limited,
+        sec:JP_Morgan_Investment_Management_Inc,
+        sec:JP_Morgan_SE,
+        sec:JP_Morgan_Securities_LLC,
+        sec:JP_Morgan_Securities_plc,
+        sec:JP_Morgan_Services_India_Private_Limited,
+        sec:Paymentech_LLC ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
+    sec:sic "6021" ;
+    sec:sicDescription "National Commercial Banks" ;
+    sec:stateOfIncorporation "DE" .
+
+sec:MS a sec:Corporation ;
+    sec:businessAddress """1585 BROADWAY
+NEW YORK, NY 10036""" ;
+    sec:cik "895421" ;
+    sec:hasExecutive sec:Exec_James_P_Gorman,
+        sec:Exec_Sharon_Yeshaya,
+        sec:Exec_Ted_Pick ;
+    sec:hasName "MORGAN STANLEY" ;
+    sec:operatesInIndustry sec:Industry_6211 ;
+    sec:ownsSubsidiary sec:Company,
+        sec:Morgan_Stanley,
+        sec:Morgan_Stanley_Bank_AG,
+        sec:Morgan_Stanley_Bank_NA,
+        sec:Morgan_Stanley_Capital_Group_Inc,
+        sec:Morgan_Stanley_Capital_Management_LLC,
+        sec:Morgan_Stanley_Capital_Services_LLC,
+        sec:Morgan_Stanley_Domestic_Holdings_LLC,
+        sec:Morgan_Stanley_Europe_SE,
+        sec:Morgan_Stanley_Finance_LLC,
+        sec:Morgan_Stanley_Holdings_LLC,
+        sec:Morgan_Stanley_International_Holdings_Inc,
+        sec:Morgan_Stanley_International_Limited,
+        sec:Morgan_Stanley_Investment_Management_Inc,
+        sec:Morgan_Stanley_Investment_Management_Limited,
+        sec:Morgan_Stanley_Investments_UK,
+        sec:Morgan_Stanley_Japan_Holdings_Co_Ltd,
+        sec:Morgan_Stanley_MUFG_Securities_Co_Ltd,
+        sec:Morgan_Stanley_Private_Bank_National_Association,
+        sec:Morgan_Stanley_Smith_Barney_LLC,
+        sec:Morgan_Stanley__Co_International_plc,
+        sec:Morgan_Stanley__Co_LLC ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
+    sec:sic "6211" ;
+    sec:sicDescription "Security Brokers, Dealers & Flotation Companies" ;
+    sec:stateOfIncorporation "DE" .
+
+sec:GS a sec:Corporation ;
+    sec:businessAddress """200 WEST STREET
+NEW YORK, NY 10282""" ;
+    sec:cik "886982" ;
+    sec:hasExecutive sec:Exec_David_M_Solomon,
+        sec:Exec_Denis_P_Coleman_III,
+        sec:Exec_John_E_Waldron ;
+    sec:hasName "GOLDMAN SACHS GROUP INC" ;
+    sec:operatesInIndustry sec:Industry_6211 ;
+    sec:ownsSubsidiary sec:ALQ_Holdings_Del_LLC,
+        sec:BSCH_Global_LLC,
+        sec:Broad_Street_Principal_Investments_Superholdco_LLC,
+        sec:GLQ_Holdings_UK_Ltd,
+        sec:GLQ_International_Holdings_Ltd,
+        sec:GLQ_International_Partners_LP,
+        sec:GLQ_Nova_Global_Designated_Activity_Company,
+        sec:GSAM_Holdings_LLC,
+        sec:GSSG_Holdings_LLC,
+        sec:GS_European_Funding_I_SA_RL_LLC,
+        sec:GS_Financial_Services_II_LLC,
+        sec:GS_Lending_Partners_Holdings_LLC,
+        sec:Goldman_Sachs_Asia_Corporate_Holdings_LLC,
+        sec:Goldman_Sachs_Asset_Management_BV,
+        sec:Goldman_Sachs_Asset_Management_Holdings_BV,
+        sec:Goldman_Sachs_Asset_Management_Holdings_II_BV,
+        sec:Goldman_Sachs_Asset_Management_Holdings_I_BV,
+        sec:Goldman_Sachs_Asset_Management_International_Holdings_BV,
+        sec:Goldman_Sachs_Asset_Management_LP,
+        sec:Goldman_Sachs_Asset_Management_UK_Holdings_II_Ltd,
+        sec:Goldman_Sachs_Asset_Management_UK_Holdings_I_Ltd,
+        sec:Goldman_Sachs_Bank_Europe_SE,
+        sec:Goldman_Sachs_Bank_USA,
+        sec:Goldman_Sachs_Canada_Holdings_LLC,
+        sec:Goldman_Sachs_Canada_Inc,
+        sec:Goldman_Sachs_Funding_LLC,
+        sec:Goldman_Sachs_Global_Funding_III_Limited,
+        sec:Goldman_Sachs_Global_Funding_II_LTD,
+        sec:Goldman_Sachs_Global_Funding_I_CO,
+        sec:Goldman_Sachs_Group_UK_Limited,
+        sec:Goldman_Sachs_International,
+        sec:Goldman_Sachs_International_Bank,
+        sec:Goldman_Sachs_Japan_Co_Ltd,
+        sec:Goldman_Sachs_Japan_Ltd,
+        sec:Goldman_Sachs_Lending_Partners_LLC,
+        sec:Goldman_Sachs_Mortgage_Company,
+        sec:Goldman_Sachs_NonUS_Americas_Holdings_II_LLC,
+        sec:Goldman_Sachs_NonUS_Americas_Holdings_LLC,
+        sec:Goldman_Sachs_UK_Funding_Limited,
+        sec:Goldman_Sachs_UK_LLC,
+        sec:Goldman_Sachs__Co_LLC,
+        sec:J_Aron__Company_LLC,
+        sec:Murray_Street_Corporation,
+        sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado,
+        sec:The_Goldman_Sachs_Group_Inc ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
+    sec:sic "6211" ;
+    sec:sicDescription "Security Brokers, Dealers & Flotation Companies" ;
+    sec:stateOfIncorporation "DE" .
+

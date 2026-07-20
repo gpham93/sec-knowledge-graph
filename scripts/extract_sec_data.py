@@ -1,4 +1,6 @@
 import os
+import time
+import argparse
 # Ensure rate limit is explicitly configured to 9 requests per second
 os.environ["EDGAR_RATE_LIMIT_PER_SEC"] = "9"
 
@@ -14,11 +16,13 @@ from pyshacl import validate
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 
 # ==========================================
+# CONFIGURATION
+# ==========================================
+DEFAULT_TICKERS = ["GS", "JPM", "MS", "C", "BAC"]
+
+# ==========================================
 # 1. RATE LIMIT COMPLIANCE & RETRY LOGIC
 # ==========================================
-
-
-# Retry fetch operations with exponential backoff on transient HTTP/Network errors
 @retry(
     wait=wait_exponential(multiplier=1, min=2, max=10),
     stop=stop_after_attempt(5),
@@ -37,12 +41,10 @@ def fetch_sec_filings(ticker_symbol):
 # 2. PROBABILISTIC ENTITY RESOLUTION
 # ==========================================
 def deduplicate_subsidiary_names(raw_names):
-    # Ensure raw_names contains unique strings
     raw_names = list(set(raw_names))
     if len(raw_names) <= 1:
         return {name: name for name in raw_names}
 
-    # Normalize name strings for similarity matching
     def clean_name(text):
         text = text.lower()
         text = re.sub(r'[^a-z0-9 ]', '', text)
@@ -56,8 +58,6 @@ def deduplicate_subsidiary_names(raw_names):
     })
 
     db_api = DuckDBAPI()
-    
-    # Configure Splink Jaro-Winkler / Levenshtein string matching
     name_comp = cl.LevenshteinAtThresholds("name", [2, 4])
     name_comp.configure(
         m_probabilities=[0.95, 0.03, 0.01, 0.01],
@@ -76,7 +76,6 @@ def deduplicate_subsidiary_names(raw_names):
     clustered = linker.clustering.cluster_pairwise_predictions_at_threshold(predictions, 0.5)
     cluster_df = clustered.as_pandas_dataframe()
 
-    # Map each original name to its cluster's representative name (first name in the cluster)
     rep_map = {}
     for _, group in cluster_df.groupby("cluster_id"):
         rep_name = group["original_name"].iloc[0]
@@ -89,7 +88,14 @@ def deduplicate_subsidiary_names(raw_names):
 # MAIN PIPELINE EXECUTION
 # ==========================================
 def main():
+    parser = argparse.ArgumentParser(description="Extract SEC EDGAR filings and generate RDF knowledge graph.")
+    parser.add_argument("--tickers", nargs="+", default=DEFAULT_TICKERS, help="List of stock ticker symbols to process.")
+    args = parser.parse_args()
+    tickers = args.tickers
+
+    print(f"Starting SEC Knowledge Graph Ingestion Batch for Tickers: {tickers}")
     set_identity("your.email@example.com") 
+
     g = Graph()
     SEC = Namespace("http://enterprise.org/ontology/sec#")
     g.bind("sec", SEC)
@@ -101,7 +107,7 @@ def main():
     g.add((SEC.ownsSubsidiary, OWL.inverseOf, SEC.isOwnedBy))
     g.add((SEC.isOwnedBy, RDF.type, OWL.FunctionalProperty))
     
-    # Phase 1 & 2: Declare New Classes & Object Properties
+    # Phase 1 & 2: Declare Classes & Properties
     g.add((SEC.Executive, RDF.type, OWL.Class))
     g.add((SEC.RiskFactor, RDF.type, OWL.Class))
     g.add((SEC.Industry, RDF.type, OWL.Class))
@@ -125,7 +131,7 @@ def main():
     g.add((SEC.sicCode, RDF.type, OWL.DatatypeProperty))
     g.add((SEC.riskCategory, RDF.type, OWL.DatatypeProperty))
 
-    # Executive Leadership mapping for parents
+    # Executive Leadership mapping for known financial parents
     executive_map = {
         "GS": [
             {"name": "David M. Solomon", "title": "Chairman and Chief Executive Officer"},
@@ -141,6 +147,14 @@ def main():
             {"name": "Jamie Dimon", "title": "Chairman and Chief Executive Officer"},
             {"name": "Jeremy Barnum", "title": "Chief Financial Officer"},
             {"name": "Daniel Pinto", "title": "President and Chief Operating Officer"}
+        ],
+        "C": [
+            {"name": "Jane Fraser", "title": "Chief Executive Officer"},
+            {"name": "Mark Mason", "title": "Chief Financial Officer"}
+        ],
+        "BAC": [
+            {"name": "Brian Moynihan", "title": "Chairman and Chief Executive Officer"},
+            {"name": "Alastair Borthwick", "title": "Chief Financial Officer"}
         ]
     }
 
@@ -153,24 +167,22 @@ def main():
         "Macroeconomic & Geopolitical Risk"
     ]
 
-    # Pull data for multiple top-tier financial parents
-    tickers = ["GS", "MS", "JPM"]
     all_subsidiaries = []      # List of tuples (parent_uri, sub_name, jurisdiction)
     parent_info = {}           # parent_uri -> company_name
     parent_metadata = {}       # parent_uri -> dict of meta values
 
-    for ticker in tickers:
-        print(f"Fetching filings for {ticker}...")
+    # Batch Processing with Per-Ticker Fault Isolation & Rate Limit Sleep
+    for i, ticker in enumerate(tickers):
+        print(f"[{i+1}/{len(tickers)}] Processing SEC EDGAR filings for ticker: {ticker}...")
         try:
             company, latest_10k = fetch_sec_filings(ticker)
             parent_uri = URIRef(SEC + ticker)
             parent_info[parent_uri] = company.name
             
-            # Cache parent metadata
             parent_metadata[parent_uri] = {
                 "cik": str(company.cik),
                 "sic": str(company.sic),
-                "sicDescription": company.industry or "Security Brokers & Dealers",
+                "sicDescription": company.industry or "Security Brokers & Financial Services",
                 "stateOfIncorporation": company.data.state_of_incorporation_description or "Delaware",
                 "businessAddress": str(company.business_address()) or "New York, NY"
             }
@@ -178,17 +190,18 @@ def main():
             for sub in latest_10k.subsidiaries:
                 all_subsidiaries.append((parent_uri, sub.name, getattr(sub, "jurisdiction", None)))
         except Exception as e:
-            print(f"Error fetching filings for {ticker}: {e}")
+            print(f"WARNING: Failed processing ticker {ticker}: {e}. Continuing batch run...")
+        
+        # SEC Traffic compliance pause between requests
+        time.sleep(1.0)
 
     # Collect all raw subsidiary names for cross-entity deduplication
     raw_sub_names = [sub_name for _, sub_name, _ in all_subsidiaries]
     rep_map = deduplicate_subsidiary_names(raw_sub_names)
 
-    # Setup JSON graph structure for visualization
     nodes = []
     links = []
     
-    # Add parent corporation nodes, industries, executives, and risks
     added_industries = set()
     added_executives = set()
     added_risks = set()
@@ -215,7 +228,7 @@ def main():
             "businessAddress": meta.get("businessAddress", "")
         })
 
-        # --- Industry Node Extraction ---
+        # Industry Hub (Shared across companies in same SIC)
         sic_val = meta.get("sic", "6211")
         industry_uri = URIRef(SEC + f"Industry_{sic_val}")
         if industry_uri not in added_industries:
@@ -233,8 +246,12 @@ def main():
         g.add((parent_uri, SEC.operatesInIndustry, industry_uri))
         links.append({"from": str(parent_uri), "to": str(industry_uri)})
 
-        # --- Executive Leadership Nodes Extraction ---
-        for exec_data in executive_map.get(ticker, []):
+        # Executive Leadership Nodes
+        exec_list = executive_map.get(ticker, [
+            {"name": f"Chief Executive Officer ({ticker})", "title": "Chief Executive Officer"},
+            {"name": f"Chief Financial Officer ({ticker})", "title": "Chief Financial Officer"}
+        ])
+        for exec_data in exec_list:
             exec_name = exec_data["name"]
             exec_title = exec_data["title"]
             exec_slug = re.sub(r'[^a-zA-Z0-9_]', '', exec_name.replace(" ", "_"))
@@ -256,7 +273,7 @@ def main():
             g.add((exec_uri, SEC.isExecutiveOf, parent_uri))
             links.append({"from": str(parent_uri), "to": str(exec_uri)})
 
-        # --- Risk Factor Nodes Extraction ---
+        # Risk Factor Hubs (Shared across industry peers)
         for risk_cat in risk_categories:
             risk_slug = re.sub(r'[^a-zA-Z0-9_]', '', risk_cat.replace(" ", "_"))
             risk_uri = URIRef(SEC + f"Risk_{risk_slug}")
@@ -280,17 +297,11 @@ def main():
     added_edges = set()
 
     for parent_uri, sub_name, sub_jurisdict in all_subsidiaries:
-        # Resolve names to their cluster's representative name
         resolved_name = rep_map.get(sub_name, sub_name)
-        
-        # URI normalization based on resolved name
         clean_name = re.sub(r'[^a-zA-Z0-9_]', '', resolved_name.replace(" ", "_"))
         sub_uri = URIRef(SEC + clean_name)
-        
-        # Determine jurisdiction
         resolved_juris = sub_jurisdict or "Unknown"
         
-        # Add the subsidiary node to the RDF graph if not already added
         if sub_uri not in added_subs:
             g.add((sub_uri, RDF.type, SEC.Subsidiary))
             g.add((sub_uri, SEC.hasName, Literal(resolved_name)))
@@ -304,7 +315,6 @@ def main():
             })
             added_subs.add(sub_uri)
             
-        # Add the parent-subsidiary relationships (bi-directional)
         g.add((parent_uri, SEC.ownsSubsidiary, sub_uri))
         g.add((sub_uri, SEC.isOwnedBy, parent_uri))
         
@@ -380,15 +390,23 @@ def main():
         print(results_text)
         raise ValueError(f"Semantic validation failed. Compliance report:\n{results_text}")
 
-    # Serialize output formats
+    # Ensure output directories exist and save files
+    os.makedirs("data", exist_ok=True)
+    g.serialize(destination="data/sec_knowledge_graph.ttl", format="turtle")
     g.serialize(destination="data_graph.ttl", format="turtle")
+    
     with open("data_graph.json", "w") as json_file:
         json.dump({"nodes": nodes, "edges": links}, json_file, indent=2)
 
-    print("Pipeline executed successfully: data_graph.ttl and data_graph.json generated.")
+    print("Batch Pipeline executed successfully!")
+    print("Saved outputs:")
+    print(" - data/sec_knowledge_graph.ttl")
+    print(" - data_graph.ttl")
+    print(" - data_graph.json")
 
 if __name__ == "__main__":
     main()
+
 
 
 

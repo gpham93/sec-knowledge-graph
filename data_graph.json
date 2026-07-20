@@ -65,34 +65,6 @@
       "riskCategory": "Macroeconomic & Geopolitical Risk"
     },
     {
-      "id": "http://enterprise.org/ontology/sec#MS",
-      "label": "MORGAN STANLEY",
-      "group": "Corporation",
-      "cik": "895421",
-      "sic": "6211",
-      "sicDescription": "Security Brokers, Dealers & Flotation Companies",
-      "stateOfIncorporation": "DE",
-      "businessAddress": "1585 BROADWAY\nNEW YORK, NY 10036"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#Exec_Ted_Pick",
-      "label": "Ted Pick (Chief Executive Officer)",
-      "group": "Executive",
-      "title": "Chief Executive Officer"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman",
-      "label": "James P. Gorman (Executive Chairman)",
-      "group": "Executive",
-      "title": "Executive Chairman"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya",
-      "label": "Sharon Yeshaya (Chief Financial Officer)",
-      "group": "Executive",
-      "title": "Chief Financial Officer"
-    },
-    {
       "id": "http://enterprise.org/ontology/sec#JPM",
       "label": "JPMORGAN CHASE & CO",
       "group": "Corporation",
@@ -125,6 +97,34 @@
       "label": "Daniel Pinto (President and Chief Operating Officer)",
       "group": "Executive",
       "title": "President and Chief Operating Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#MS",
+      "label": "MORGAN STANLEY",
+      "group": "Corporation",
+      "cik": "895421",
+      "sic": "6211",
+      "sicDescription": "Security Brokers, Dealers & Flotation Companies",
+      "stateOfIncorporation": "DE",
+      "businessAddress": "1585 BROADWAY\nNEW YORK, NY 10036"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Ted_Pick",
+      "label": "Ted Pick (Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman",
+      "label": "James P. Gorman (Executive Chairman)",
+      "group": "Executive",
+      "title": "Executive Chairman"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya",
+      "label": "Sharon Yeshaya (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
     },
     {
       "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
@@ -397,6 +397,114 @@
       "jurisdiction": "Delaware"
     },
     {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association",
+      "label": "JPMorgan Chase Bank, National Association",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Paymentech_LLC",
+      "label": "Paymentech, LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited",
+      "label": "J.P. Morgan International Finance Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd",
+      "label": "JPMorgan Securities Japan Co., Ltd.",
+      "group": "Subsidiary",
+      "jurisdiction": "Japan"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited",
+      "label": "J.P. Morgan Capital Holdings Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc",
+      "label": "J.P. Morgan Securities plc",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_SE",
+      "label": "J.P. Morgan SE",
+      "group": "Subsidiary",
+      "jurisdiction": "Germany"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC",
+      "label": "JPMorgan Chase Holdings LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited",
+      "label": "J.P. Morgan Services India Private Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "India"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc",
+      "label": "JPMorgan Asset Management Holdings Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc",
+      "label": "JPMorgan Distribution Services, Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited",
+      "label": "JPMorgan Asset Management International Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited",
+      "label": "JPMorgan Asset Management (UK) Limited",
+      "group": "Subsidiary",
+      "jurisdiction": "United Kingdom"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl",
+      "label": "JPMorgan Asset Management Holdings (Luxembourg) S.\u00e0 r.l.",
+      "group": "Subsidiary",
+      "jurisdiction": "Luxembourg"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl",
+      "label": "JPMorgan Asset Management (Europe) S.\u00e0 r.l.",
+      "group": "Subsidiary",
+      "jurisdiction": "Luxembourg"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc",
+      "label": "J.P. Morgan Investment Management Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc",
+      "label": "J.P. Morgan Broker-Dealer Holdings Inc.",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC",
+      "label": "J.P. Morgan Securities LLC",
+      "group": "Subsidiary",
+      "jurisdiction": "United States"
+    },
+    {
       "id": "http://enterprise.org/ontology/sec#Company",
       "label": "Company",
       "group": "Subsidiary",
@@ -527,114 +635,6 @@
       "label": "Morgan Stanley Investment Management Limited",
       "group": "Subsidiary",
       "jurisdiction": "United Kingdom"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association",
-      "label": "JPMorgan Chase Bank, National Association",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#Paymentech_LLC",
-      "label": "Paymentech, LLC",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited",
-      "label": "J.P. Morgan International Finance Limited",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd",
-      "label": "JPMorgan Securities Japan Co., Ltd.",
-      "group": "Subsidiary",
-      "jurisdiction": "Japan"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited",
-      "label": "J.P. Morgan Capital Holdings Limited",
-      "group": "Subsidiary",
-      "jurisdiction": "United Kingdom"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc",
-      "label": "J.P. Morgan Securities plc",
-      "group": "Subsidiary",
-      "jurisdiction": "United Kingdom"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_SE",
-      "label": "J.P. Morgan SE",
-      "group": "Subsidiary",
-      "jurisdiction": "Germany"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC",
-      "label": "JPMorgan Chase Holdings LLC",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited",
-      "label": "J.P. Morgan Services India Private Limited",
-      "group": "Subsidiary",
-      "jurisdiction": "India"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc",
-      "label": "JPMorgan Asset Management Holdings Inc.",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc",
-      "label": "JPMorgan Distribution Services, Inc.",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited",
-      "label": "JPMorgan Asset Management International Limited",
-      "group": "Subsidiary",
-      "jurisdiction": "United Kingdom"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited",
-      "label": "JPMorgan Asset Management (UK) Limited",
-      "group": "Subsidiary",
-      "jurisdiction": "United Kingdom"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl",
-      "label": "JPMorgan Asset Management Holdings (Luxembourg) S.\u00e0 r.l.",
-      "group": "Subsidiary",
-      "jurisdiction": "Luxembourg"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl",
-      "label": "JPMorgan Asset Management (Europe) S.\u00e0 r.l.",
-      "group": "Subsidiary",
-      "jurisdiction": "Luxembourg"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc",
-      "label": "J.P. Morgan Investment Management Inc.",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc",
-      "label": "J.P. Morgan Broker-Dealer Holdings Inc.",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
-    },
-    {
-      "id": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC",
-      "label": "J.P. Morgan Securities LLC",
-      "group": "Subsidiary",
-      "jurisdiction": "United States"
     }
   ],
   "edges": [
@@ -675,42 +675,6 @@
       "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
     },
     {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Industry_6211"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Exec_Ted_Pick"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#MS",
-      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
-    },
-    {
       "from": "http://enterprise.org/ontology/sec#JPM",
       "to": "http://enterprise.org/ontology/sec#Industry_6021"
     },
@@ -744,6 +708,42 @@
     },
     {
       "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Industry_6211"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_Ted_Pick"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
       "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
     },
     {
@@ -927,6 +927,78 @@
       "to": "http://enterprise.org/ontology/sec#BSCH_Global_LLC"
     },
     {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Paymentech_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_SE"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC"
+    },
+    {
       "from": "http://enterprise.org/ontology/sec#MS",
       "to": "http://enterprise.org/ontology/sec#Company"
     },
@@ -1013,78 +1085,6 @@
     {
       "from": "http://enterprise.org/ontology/sec#MS",
       "to": "http://enterprise.org/ontology/sec#Morgan_Stanley_Investment_Management_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Bank_National_Association"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#Paymentech_LLC"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_International_Finance_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Securities_Japan_Co_Ltd"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Capital_Holdings_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_plc"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_SE"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Chase_Holdings_LLC"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Services_India_Private_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Inc"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Distribution_Services_Inc"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_International_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_UK_Limited"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JPMorgan_Asset_Management_Europe_S_rl"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Investment_Management_Inc"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_BrokerDealer_Holdings_Inc"
-    },
-    {
-      "from": "http://enterprise.org/ontology/sec#JPM",
-      "to": "http://enterprise.org/ontology/sec#JP_Morgan_Securities_LLC"
     }
   ]
 }
