@@ -5,14 +5,27 @@ sec:businessAddress a owl:DatatypeProperty .
 
 sec:cik a owl:DatatypeProperty .
 
+sec:hasExecutive a owl:ObjectProperty ;
+    owl:inverseOf sec:isExecutiveOf .
+
 sec:hasJurisdiction a owl:DatatypeProperty .
 
 sec:hasName a owl:DatatypeProperty .
 
+sec:hasTitle a owl:DatatypeProperty .
+
+sec:operatesInIndustry a owl:ObjectProperty .
+
 sec:ownsSubsidiary a owl:ObjectProperty ;
     owl:inverseOf sec:isOwnedBy .
 
+sec:reportsRisk a owl:ObjectProperty .
+
+sec:riskCategory a owl:DatatypeProperty .
+
 sec:sic a owl:DatatypeProperty .
+
+sec:sicCode a owl:DatatypeProperty .
 
 sec:sicDescription a owl:DatatypeProperty .
 
@@ -37,6 +50,51 @@ sec:Company a sec:Subsidiary ;
     sec:hasJurisdiction "Jurisdiction of Incorporation or Formation" ;
     sec:hasName "Company" ;
     sec:isOwnedBy sec:MS .
+
+sec:Exec_Daniel_Pinto a sec:Executive ;
+    sec:hasName "Daniel Pinto" ;
+    sec:hasTitle "President and Chief Operating Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_David_M_Solomon a sec:Executive ;
+    sec:hasName "David M. Solomon" ;
+    sec:hasTitle "Chairman and Chief Executive Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_Denis_P_Coleman_III a sec:Executive ;
+    sec:hasName "Denis P. Coleman III" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_James_P_Gorman a sec:Executive ;
+    sec:hasName "James P. Gorman" ;
+    sec:hasTitle "Executive Chairman" ;
+    sec:isExecutiveOf sec:MS .
+
+sec:Exec_Jamie_Dimon a sec:Executive ;
+    sec:hasName "Jamie Dimon" ;
+    sec:hasTitle "Chairman and Chief Executive Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_Jeremy_Barnum a sec:Executive ;
+    sec:hasName "Jeremy Barnum" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:JPM .
+
+sec:Exec_John_E_Waldron a sec:Executive ;
+    sec:hasName "John E. Waldron" ;
+    sec:hasTitle "President and Chief Operating Officer" ;
+    sec:isExecutiveOf sec:GS .
+
+sec:Exec_Sharon_Yeshaya a sec:Executive ;
+    sec:hasName "Sharon Yeshaya" ;
+    sec:hasTitle "Chief Financial Officer" ;
+    sec:isExecutiveOf sec:MS .
+
+sec:Exec_Ted_Pick a sec:Executive ;
+    sec:hasName "Ted Pick" ;
+    sec:hasTitle "Chief Executive Officer" ;
+    sec:isExecutiveOf sec:MS .
 
 sec:GLQ_Holdings_UK_Ltd a sec:Subsidiary ;
     sec:hasJurisdiction "United Kingdom" ;
@@ -227,6 +285,10 @@ sec:Goldman_Sachs__Co_LLC a sec:Subsidiary ;
     sec:hasJurisdiction "New York" ;
     sec:hasName "Goldman Sachs & Co. LLC" ;
     sec:isOwnedBy sec:GS .
+
+sec:Industry_6021 a sec:Industry ;
+    sec:hasName "National Commercial Banks" ;
+    sec:sicCode "6021" .
 
 sec:JPMorgan_Asset_Management_Europe_S_rl a sec:Subsidiary ;
     sec:hasJurisdiction "Luxembourg" ;
@@ -443,14 +505,50 @@ sec:The_Goldman_Sachs_Group_Inc a sec:Subsidiary ;
     sec:hasName "The Goldman Sachs Group, Inc." ;
     sec:isOwnedBy sec:GS .
 
+sec:isExecutiveOf a owl:ObjectProperty .
+
 sec:isOwnedBy a owl:FunctionalProperty,
         owl:ObjectProperty .
+
+sec:Industry a owl:Class .
+
+sec:Industry_6211 a sec:Industry ;
+    sec:hasName "Security Brokers, Dealers & Flotation Companies" ;
+    sec:sicCode "6211" .
+
+sec:Risk_Credit__Counterparty_Default a sec:RiskFactor ;
+    sec:hasName "Credit & Counterparty Default" ;
+    sec:riskCategory "Credit & Counterparty Default" .
+
+sec:Risk_Cybersecurity__Operational_Risk a sec:RiskFactor ;
+    sec:hasName "Cybersecurity & Operational Risk" ;
+    sec:riskCategory "Cybersecurity & Operational Risk" .
+
+sec:Risk_Macroeconomic__Geopolitical_Risk a sec:RiskFactor ;
+    sec:hasName "Macroeconomic & Geopolitical Risk" ;
+    sec:riskCategory "Macroeconomic & Geopolitical Risk" .
+
+sec:Risk_Market__Liquidity_Volatility a sec:RiskFactor ;
+    sec:hasName "Market & Liquidity Volatility" ;
+    sec:riskCategory "Market & Liquidity Volatility" .
+
+sec:Risk_Regulatory_Compliance__Legal_Risk a sec:RiskFactor ;
+    sec:hasName "Regulatory Compliance & Legal Risk" ;
+    sec:riskCategory "Regulatory Compliance & Legal Risk" .
+
+sec:RiskFactor a owl:Class .
+
+sec:Executive a owl:Class .
 
 sec:JPM a sec:Corporation ;
     sec:businessAddress """270 PARK AVENUE
 NEW YORK, NY 10017""" ;
     sec:cik "19617" ;
+    sec:hasExecutive sec:Exec_Daniel_Pinto,
+        sec:Exec_Jamie_Dimon,
+        sec:Exec_Jeremy_Barnum ;
     sec:hasName "JPMORGAN CHASE & CO" ;
+    sec:operatesInIndustry sec:Industry_6021 ;
     sec:ownsSubsidiary sec:JPMorgan_Asset_Management_Europe_S_rl,
         sec:JPMorgan_Asset_Management_Holdings_Inc,
         sec:JPMorgan_Asset_Management_Holdings_Luxembourg_S_rl,
@@ -469,6 +567,11 @@ NEW YORK, NY 10017""" ;
         sec:JP_Morgan_Securities_plc,
         sec:JP_Morgan_Services_India_Private_Limited,
         sec:Paymentech_LLC ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
     sec:sic "6021" ;
     sec:sicDescription "National Commercial Banks" ;
     sec:stateOfIncorporation "DE" .
@@ -477,7 +580,11 @@ sec:MS a sec:Corporation ;
     sec:businessAddress """1585 BROADWAY
 NEW YORK, NY 10036""" ;
     sec:cik "895421" ;
+    sec:hasExecutive sec:Exec_James_P_Gorman,
+        sec:Exec_Sharon_Yeshaya,
+        sec:Exec_Ted_Pick ;
     sec:hasName "MORGAN STANLEY" ;
+    sec:operatesInIndustry sec:Industry_6211 ;
     sec:ownsSubsidiary sec:Company,
         sec:Morgan_Stanley,
         sec:Morgan_Stanley_Bank_AG,
@@ -500,6 +607,11 @@ NEW YORK, NY 10036""" ;
         sec:Morgan_Stanley_Smith_Barney_LLC,
         sec:Morgan_Stanley__Co_International_plc,
         sec:Morgan_Stanley__Co_LLC ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
     sec:sic "6211" ;
     sec:sicDescription "Security Brokers, Dealers & Flotation Companies" ;
     sec:stateOfIncorporation "DE" .
@@ -508,7 +620,11 @@ sec:GS a sec:Corporation ;
     sec:businessAddress """200 WEST STREET
 NEW YORK, NY 10282""" ;
     sec:cik "886982" ;
+    sec:hasExecutive sec:Exec_David_M_Solomon,
+        sec:Exec_Denis_P_Coleman_III,
+        sec:Exec_John_E_Waldron ;
     sec:hasName "GOLDMAN SACHS GROUP INC" ;
+    sec:operatesInIndustry sec:Industry_6211 ;
     sec:ownsSubsidiary sec:ALQ_Holdings_Del_LLC,
         sec:BSCH_Global_LLC,
         sec:Broad_Street_Principal_Investments_Superholdco_LLC,
@@ -554,6 +670,11 @@ NEW YORK, NY 10282""" ;
         sec:Murray_Street_Corporation,
         sec:Sphere_Fundo_De_Investimento_Multimercado__Investimento_No_Exterior_Credito_Privado,
         sec:The_Goldman_Sachs_Group_Inc ;
+    sec:reportsRisk sec:Risk_Credit__Counterparty_Default,
+        sec:Risk_Cybersecurity__Operational_Risk,
+        sec:Risk_Macroeconomic__Geopolitical_Risk,
+        sec:Risk_Market__Liquidity_Volatility,
+        sec:Risk_Regulatory_Compliance__Legal_Risk ;
     sec:sic "6211" ;
     sec:sicDescription "Security Brokers, Dealers & Flotation Companies" ;
     sec:stateOfIncorporation "DE" .
