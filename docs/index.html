@@ -501,36 +501,40 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="anchored" data-anchor-id="live-graph-rag-chatbot">🤖 Live Graph RAG Chatbot</h2>
 <p>Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini’s answers in real time.</p>
 <div class="chat-card mb-4" style="padding: 0; overflow: hidden;">
-<div class="chat-container">
-<pre><code>&lt;div class="chat-header"&gt;
-  &lt;span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;"&gt;Grounded in SEC Graph&lt;/span&gt;
-  &lt;button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;"&gt;⚙️ API Key&lt;/button&gt;
-&lt;/div&gt;
-&lt;div id="key-panel" class="api-key-panel d-none m-3"&gt;
-  &lt;label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;"&gt;Gemini API Key (stored locally in your browser):&lt;/label&gt;
-  &lt;div class="input-group mb-2"&gt;
-    &lt;input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy..."&gt;
-    &lt;button id="save-key-btn" class="btn btn-sm btn-primary"&gt;Save Key&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;small class="text-muted" style="font-size: 0.75rem;"&gt;No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.&lt;/small&gt;
-&lt;/div&gt;
-&lt;div id="chat-log" class="chat-log"&gt;
-  &lt;div class="chat-message bot"&gt;
-    Hello! I am your SEC Graph RAG assistant. Ask me anything about parent companies, CIKs, SIC codes, addresses, or subsidiaries, or click one of the quick questions below:
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="chat-input-area"&gt;
-  &lt;input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries..."&gt;
-  &lt;button id="send-chat-btn" class="chat-send-btn" type="button" aria-label="Send query"&gt;
-    &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"&gt;
-      &lt;path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/&gt;
-    &lt;/svg&gt;
-  &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  <div class="chat-container">
+    <div class="chat-header">
+      <span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;">Grounded in SEC Graph</span>
+      <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;">⚙️ API Key</button>
+    </div>
+    <div id="key-panel" class="api-key-panel d-none m-3">
+      <label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;">Gemini API Key (stored locally in your browser):</label>
+      <div class="input-group mb-2">
+        <input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy...">
+        <button id="save-key-btn" class="btn btn-sm btn-primary">Save Key</button>
+      </div>
+      <small class="text-muted" style="font-size: 0.75rem;">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
+    </div>
+    <div id="chat-log" class="chat-log">
+      <div class="chat-message bot">
+        Hello! I am your SEC Graph RAG assistant. Ask me anything about parent companies, CIKs, SIC codes, addresses, or subsidiaries, or click one of the quick questions below:
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
+      <button id="send-chat-btn" class="chat-send-btn" type="button" aria-label="Send query">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16">
+          <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
-</div>
+
 <div class="chat-chips mb-4">
-<p><button type="button" class="chip" data-prompt="What is Morgan Stanley's CIK and state of incorporation?">Morgan Stanley Info</button> <button type="button" class="chip" data-prompt="Which JPMorgan Chase subsidiaries are located in Germany?">JPM Germany Subs</button> <button type="button" class="chip" data-prompt="Are there any duplicate or clustered subsidiaries?">Deduplication Info</button> <button type="button" class="chip" data-prompt="What is Goldman Sachs' business address?">GS Address</button></p>
+  <button type="button" class="chip" data-prompt="What is Morgan Stanley's CIK and state of incorporation?">Morgan Stanley Info</button>
+  <button type="button" class="chip" data-prompt="Which JPMorgan Chase subsidiaries are located in Germany?">JPM Germany Subs</button>
+  <button type="button" class="chip" data-prompt="Are there any duplicate or clustered subsidiaries?">Deduplication Info</button>
+  <button type="button" class="chip" data-prompt="What is Goldman Sachs' business address?">GS Address</button>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -757,11 +761,11 @@ Rules:
 <section id="how-to-run-graph-rag-locally" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-run-graph-rag-locally">How to Run Graph RAG Locally</h3>
 <p>Ensure you have your Gemini API key configured in your terminal environment, then run the query tool:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Export your API key</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GEMINI_API_KEY</span><span class="op">=</span><span class="st">"your-gemini-api-key"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Run the Query Engine</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/graph_rag.py <span class="at">--query</span> <span class="st">"Which JPMorgan Chase subsidiaries are located in Germany?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Export your API key</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GEMINI_API_KEY</span><span class="op">=</span><span class="st">"your-gemini-api-key"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Run the Query Engine</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/graph_rag.py <span class="at">--query</span> <span class="st">"Which JPMorgan Chase subsidiaries are located in Germany?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The script will: 1. Load <a href="file:///Users/gabrielpham/.gemini/antigravity-ide/scratch/sec-knowledge-graph/data_graph.ttl">data_graph.ttl</a>. 2. Feed the relevant serialized Turtle graph context into the Gemini model. 3. Generate a highly accurate, grounded answer complete with URI citations.</p>
 
 
