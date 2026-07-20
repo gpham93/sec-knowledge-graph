@@ -155,42 +155,41 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 🤖 Live Graph RAG Chatbot
 Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini's answers in real time.
 
-::: {.chat-container}
-<div class="chat-header">
-  <span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;">Grounded in SEC Graph</span>
-  <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;">⚙️ API Key</button>
-</div>
-
-<div id="key-panel" class="api-key-panel d-none">
-  <label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;">Gemini API Key (stored locally in your browser):</label>
-  <div class="input-group mb-2">
-    <input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy...">
-    <button id="save-key-btn" class="btn btn-sm btn-primary">Save Key</button>
+<div class="chat-card mb-4" style="padding: 0; overflow: hidden;">
+  <div class="chat-container">
+    <div class="chat-header">
+      <span class="badge-custom badge-corp" style="font-family: 'Outfit', sans-serif;">Grounded in SEC Graph</span>
+      <button id="toggle-key-btn" class="btn btn-sm btn-outline-secondary" style="font-family: 'Outfit', sans-serif; border-radius: 20px; padding: 2px 10px; font-size: 0.8rem;">⚙️ API Key</button>
+    </div>
+    <div id="key-panel" class="api-key-panel d-none m-3">
+      <label for="gemini-key" class="form-label" style="font-size: 0.85rem; font-weight: 500;">Gemini API Key (stored locally in your browser):</label>
+      <div class="input-group mb-2">
+        <input type="password" id="gemini-key" class="form-control form-control-sm" placeholder="AIzaSy...">
+        <button id="save-key-btn" class="btn btn-sm btn-primary">Save Key</button>
+      </div>
+      <small class="text-muted" style="font-size: 0.75rem;">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
+    </div>
+    <div id="chat-log" class="chat-log">
+      <div class="chat-message bot">
+        Hello! I am your SEC Graph RAG assistant. Ask me anything about parent companies, CIKs, SIC codes, addresses, or subsidiaries, or click one of the quick questions below:
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
+      <button id="send-chat-btn" class="chat-send-btn" type="button" aria-label="Send query">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+        </svg>
+      </button>
+    </div>
   </div>
-  <small class="text-muted" style="font-size: 0.75rem;">No backend is used. Your key is sent directly to Google's Gemini API endpoint in your browser.</small>
 </div>
 
-<div id="chat-log" class="chat-log">
-  <div class="chat-message bot">
-    Hello! I am your SEC Graph RAG assistant. Ask me anything about parent companies, CIKs, SIC codes, addresses, or subsidiaries, or click one of the quick questions below:
-  </div>
-</div>
-
-<div class="chat-input-area">
-  <input type="text" id="chat-input" class="chat-input-field" placeholder="Ask about CIKs, SIC codes, addresses, or subsidiaries...">
-  <button id="send-chat-btn" class="chat-send-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.26.41a.5.5 0 0 0 .887-.082l.18-.452L15.963.686Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
-    </svg>
-  </button>
-</div>
-:::
-
-<div class="chat-chips">
-  <div class="chip" onclick="sendSuggestion('What is Morgan Stanley\'s CIK and state of incorporation?')">Morgan Stanley Info</div>
-  <div class="chip" onclick="sendSuggestion('Which JPMorgan Chase subsidiaries are located in Germany?')">JPM Germany Subs</div>
-  <div class="chip" onclick="sendSuggestion('Are there any duplicate or clustered subsidiaries?')">Deduplication Info</div>
-  <div class="chip" onclick="sendSuggestion('What is Goldman Sachs\' business address?')">GS Address</div>
+<div class="chat-chips mb-4">
+  <button type="button" class="chip" data-prompt="What is Morgan Stanley's CIK and state of incorporation?">Morgan Stanley Info</button>
+  <button type="button" class="chip" data-prompt="Which JPMorgan Chase subsidiaries are located in Germany?">JPM Germany Subs</button>
+  <button type="button" class="chip" data-prompt="Are there any duplicate or clustered subsidiaries?">Deduplication Info</button>
+  <button type="button" class="chip" data-prompt="What is Goldman Sachs' business address?">GS Address</button>
 </div>
 
 <script>
@@ -202,8 +201,25 @@ document.addEventListener("DOMContentLoaded", function() {
   const chatLog = document.getElementById('chat-log');
   const chatInput = document.getElementById('chat-input');
   const sendChatBtn = document.getElementById('send-chat-btn');
+  const chips = document.querySelectorAll('.chip');
   
   let graphDataText = "";
+  
+  // Safe markdown renderer helper
+  function safeRenderMarkdown(text) {
+    try {
+      if (typeof marked !== 'undefined') {
+        if (typeof marked.parse === 'function') {
+          return marked.parse(text);
+        } else if (typeof marked === 'function') {
+          return marked(text);
+        }
+      }
+    } catch (e) {
+      console.warn("Markdown rendering error:", e);
+    }
+    return text.replace(/\n/g, '<br>');
+  }
   
   // Fetch graph data to build our RAG grounding context
   fetch('data_graph.json')
@@ -216,7 +232,8 @@ document.addEventListener("DOMContentLoaded", function() {
       
       context += "PARENTS (Corporations):\n";
       corps.forEach(c => {
-        context += `- ${c.label} (URI: ${c.id}) has CIK ${c.cik}, SIC code ${c.sic} (${c.sicDescription}), state of incorporation ${c.stateOfIncorporation}, address: ${c.businessAddress.replace(/\\n/g, ', ')}.\n`;
+        const addr = (c.businessAddress || "").replace(/\n/g, ', ');
+        context += `- ${c.label} (URI: ${c.id}) has CIK ${c.cik}, SIC code ${c.sic} (${c.sicDescription}), state of incorporation ${c.stateOfIncorporation}, address: ${addr}.\n`;
       });
       
       context += "\nRELATIONSHIPS (Ownership & Jurisdictions):\n";
@@ -238,22 +255,26 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Toggle key panel
-  toggleKeyBtn.addEventListener('click', () => {
-    keyPanel.classList.toggle('d-none');
-  });
+  if (toggleKeyBtn && keyPanel) {
+    toggleKeyBtn.addEventListener('click', () => {
+      keyPanel.classList.toggle('d-none');
+    });
+  }
 
   // Save key
-  saveKeyBtn.addEventListener('click', () => {
-    const key = geminiKeyInput.value.trim();
-    if (key) {
-      localStorage.setItem('gemini_api_key', key);
-      appendMessage('bot', 'API Key saved successfully! Ask me anything.');
-      keyPanel.classList.add('d-none');
-    } else {
-      localStorage.removeItem('gemini_api_key');
-      appendMessage('bot', 'API Key cleared.');
-    }
-  });
+  if (saveKeyBtn && geminiKeyInput) {
+    saveKeyBtn.addEventListener('click', () => {
+      const key = geminiKeyInput.value.trim();
+      if (key) {
+        localStorage.setItem('gemini_api_key', key);
+        appendMessage('bot', 'API Key saved successfully! Ask me anything.');
+        keyPanel.classList.add('d-none');
+      } else {
+        localStorage.removeItem('gemini_api_key');
+        appendMessage('bot', 'API Key cleared.');
+      }
+    });
+  }
 
   // Append a message to the chat UI
   function appendMessage(sender, text) {
@@ -271,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function queryGemini(userMessage) {
     const apiKey = localStorage.getItem('gemini_api_key') || DEFAULT_API_KEY;
     if (!apiKey) {
-      appendMessage('bot', '⚠️ Please configure your Gemini API Key using the ⚙️ API Key button above (or get a free 1-click key at <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>).');
+      appendMessage('bot', '⚠️ Please configure your Gemini API Key using the ⚙️ API Key button above (or get a free 1-click key at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #00b4d8;">Google AI Studio</a>).');
       return;
     }
 
@@ -319,8 +340,7 @@ Rules:
       } catch (err) {
         answer = "Could not parse response from Gemini API.";
       }
-      // Render markdown response dynamically using marked
-      botBubble.innerHTML = marked.parse(answer);
+      botBubble.innerHTML = safeRenderMarkdown(answer);
       chatLog.scrollTop = chatLog.scrollHeight;
     })
     .catch(err => {
@@ -341,16 +361,25 @@ Rules:
     queryGemini(text);
   }
 
-  sendChatBtn.addEventListener('click', handleSend);
-  chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleSend();
-  });
+  if (sendChatBtn) {
+    sendChatBtn.addEventListener('click', handleSend);
+  }
+  if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  }
 
-  // Bind to window to allow chip triggers
-  window.sendSuggestion = function(text) {
-    appendMessage('user', text.replace(/\n/g, '<br>'));
-    queryGemini(text);
-  };
+  // Event listeners for suggestion chips
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const promptText = chip.getAttribute('data-prompt');
+      if (promptText) {
+        appendMessage('user', promptText);
+        queryGemini(promptText);
+      }
+    });
+  });
 });
 </script>
 
