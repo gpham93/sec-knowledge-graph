@@ -311,7 +311,24 @@ document.addEventListener("DOMContentLoaded", function() {
     return msg;
   }
 
-  const DEFAULT_API_KEY = "";
+  const FINANCIAL_TERM_MAP = {
+    "supply chain": ["third-party vendor", "outsourced service provider", "operational reliance", "cloud infrastructure risk"],
+    "lawsuits": ["legal proceedings", "item 3", "contingent liabilities", "litigation"],
+    "lawsuit": ["legal proceedings", "item 3", "contingent liabilities", "litigation"],
+    "executives": ["executive officers", "board of directors", "senior leadership"],
+    "subsidiaries": ["exhibit 21", "subsidiaries of the registrant", "owned entities"]
+  };
+
+  function expandFinancialTerms(queryText) {
+    let expanded = queryText;
+    const lower = queryText.toLowerCase();
+    for (const [key, synonyms] of Object.entries(FINANCIAL_TERM_MAP)) {
+      if (lower.includes(key)) {
+        expanded += " [" + synonyms.join(", ") + "]";
+      }
+    }
+    return expanded;
+  }
 
   // Call Gemini API
   function queryGemini(userMessage) {
@@ -330,17 +347,20 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
     `);
 
+    const expandedQuery = expandFinancialTerms(userMessage);
+
     const prompt = `
-You are an expert corporate intelligence assistant. You have access to a verified facts database derived from SEC EDGAR filings.
+You are an expert corporate intelligence assistant with access to a dual-pass hybrid Knowledge Graph facts database derived from SEC EDGAR 10-K filings.
 
 ${graphDataText}
 
-Based ONLY on the facts above, answer this question: "${userMessage}"
+User Query: "${userMessage}"
+Expanded Domain Search Context: "${expandedQuery}"
 
 Rules:
-1. Ground your answer strictly in the facts database above. If the database does not have the info, say "I cannot find this information in the SEC knowledge graph."
-2. Do not assume or extrapolate.
-3. Be concise and cite the parent-subsidiary relationships or metadata.
+1. Ground your answer strictly in the facts database above. If structural entities (subsidiaries, executives) are requested, list them clearly.
+2. If narrative topics (risks, supply chain, lawsuits) are requested, use the expanded SEC 10-K terms to summarize key risks.
+3. Be concise and cite parent-subsidiary relationships or metadata explicitly.
 `;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`;

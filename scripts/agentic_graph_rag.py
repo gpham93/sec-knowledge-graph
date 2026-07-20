@@ -139,13 +139,72 @@ class HybridRetriever:
         return matches[:30]
 
 
+class FinancialTermExpander:
+    """
+    FINANCIAL DOMAIN TERM EXPANSION
+    Maps user colloquial terms to SEC-standard 10-K filing terminology.
+    """
+    TERM_MAP = {
+        "supply chain": ["third-party vendor", "outsourced service provider", "operational reliance", "cloud infrastructure risk", "supply chain"],
+        "lawsuits": ["legal proceedings", "item 3", "contingent liabilities", "litigation", "lawsuit"],
+        "lawsuit": ["legal proceedings", "item 3", "contingent liabilities", "litigation"],
+        "executives": ["executive officers", "board of directors", "senior leadership", "item 10", "executive"],
+        "subsidiaries": ["exhibit 21", "subsidiaries of the registrant", "owned entities", "subsidiary"]
+    }
+
+    @classmethod
+    def expand_terms(cls, query_text: str) -> List[str]:
+        query_lower = query_text.lower()
+        expanded_terms = set(re.findall(r'\w+', query_text))
+        for user_term, sec_terms in cls.TERM_MAP.items():
+            if user_term in query_lower:
+                expanded_terms.update(sec_terms)
+        return [t for t in expanded_terms if len(t) > 2]
+
+
+class DualPassQueryPlanner:
+    """
+    DUAL-PASS HYBRID EXECUTION PLANNER
+    Detects multi-part prompts containing both structural questions (e.g. subsidiaries)
+    and narrative text questions (e.g. risks/lawsuits) and splits them into parallel sub-tasks:
+    - Sub-task A -> Graph (SPARQL) structural traversal for entity relationships.
+    - Sub-task B -> Vector / Lexical text search with Financial Domain Term Expansion.
+    """
+    def __init__(self, retriever: HybridRetriever):
+        self.retriever = retriever
+
+    def execute_dual_pass(self, user_query: str) -> Tuple[str, List[Tuple[Any, Any, Any]], List[str]]:
+        """
+        Executes parallel sub-tasks and merges outputs into a unified context.
+        """
+        expanded_terms = FinancialTermExpander.expand_terms(user_query)
+
+        # Sub-task A: Graph SPARQL / Multi-Hop Traversal
+        seed_nodes = self.retriever.find_entry_point_nodes(expanded_terms)
+        graph_triples = self.retriever.traverse_subgraph(seed_nodes, max_hops=2) if seed_nodes else []
+
+        # Sub-task B: Expanded Vector/Lexical Search
+        vector_matches = self.retriever.text_lexical_search(" ".join(expanded_terms))
+
+        merged_context = "=== DUAL-PASS HYBRID RETRIEVAL CONTEXT ===\n"
+        merged_context += f"SUB-TASK A (Structural Graph Triples - Count: {len(graph_triples)}):\n"
+        for s, p, o in graph_triples[:40]:
+            merged_context += f"<{s}> <{p}> {o.n3()}\n"
+        
+        merged_context += f"\nSUB-TASK B (Narrative Vector & Term Expansion Matches - Count: {len(vector_matches)}):\n"
+        for match in vector_matches[:25]:
+            merged_context += f"{match}\n"
+
+        return merged_context, graph_triples, vector_matches
+
+
 class AgenticRouter:
     """
     PHASE 3: AGENTIC ROUTING CONTROLLER
     Analyzes the user's prompt against the schema to determine optimal retrieval routing:
+    - DUAL_PASS_HYBRID: Split into parallel Sub-task A (Graph) and Sub-task B (Vector + Term Expansion).
     - GRAPH_METADATA: Structured SPARQL/traversal for exact corporate attributes & tree links.
-    - VECTOR_TEXT: Free-text lexical matching for unstructured queries.
-    - HYBRID_PARALLEL: Blended traversal + text matching.
+    - VECTOR_TEXT: Free-text lexical matching with term expansion.
     """
 
     def __init__(self, schema_text: str):
@@ -157,14 +216,18 @@ class AgenticRouter:
 
         structural_keywords = [
             "subsidiary", "subsidiaries", "owns", "owned", "parent", 
-            "jurisdiction", "cik", "sic", "incorporated", "address", "state"
+            "jurisdiction", "cik", "sic", "incorporated", "executive", "executives"
+        ]
+        narrative_keywords = [
+            "risk", "risks", "supply chain", "lawsuit", "lawsuits", "litigation", "summary", "summarize"
         ]
         
         has_structural = any(kw in query_lower for kw in structural_keywords)
+        has_narrative = any(kw in query_lower for kw in narrative_keywords)
 
-        if has_structural:
-            if any(term in query_lower for term in ["list", "all", "where", "how many"]):
-                return "HYBRID_PARALLEL"
+        if has_structural and has_narrative:
+            return "DUAL_PASS_HYBRID"
+        elif has_structural:
             return "GRAPH_METADATA"
         else:
             return "VECTOR_TEXT"
@@ -173,8 +236,7 @@ class AgenticRouter:
 class AgenticGraphRAGEngine:
     """
     ORCHESTRATOR & FALLBACK CONTROLLER
-    Combines Schema Extractor, Hybrid Retriever, and Agentic Router with 
-    automatic fallback logic if graph queries return zero results.
+    Combines Schema Extractor, Hybrid Retriever, Dual-Pass Planner, and Agentic Router.
     """
 
     def __init__(self, graph_path: str = "data_graph.ttl"):
@@ -184,14 +246,11 @@ class AgenticGraphRAGEngine:
         self.graph = Graph()
         self.graph.parse(graph_path, format="turtle")
         
-        # Phase 1: Extract Schema
         self.schema_extractor = GraphSchemaExtractor(self.graph)
         self.schema_text = self.schema_extractor.extract_schema()
 
-        # Phase 2: Hybrid Retriever
         self.retriever = HybridRetriever(self.graph)
-
-        # Phase 3: Agentic Router
+        self.planner = DualPassQueryPlanner(self.retriever)
         self.router = AgenticRouter(self.schema_text)
 
     def query(self, user_query: str) -> str:
@@ -204,28 +263,26 @@ class AgenticGraphRAGEngine:
         retrieved_context = ""
         triples_found = []
 
-        # Extract search keywords from prompt
-        keywords = [w for w in re.findall(r'\w+', user_query) if len(w) > 2]
-
-        if route in ["GRAPH_METADATA", "HYBRID_PARALLEL"]:
-            # Perform multi-hop graph traversal
-            seed_nodes = self.retriever.find_entry_point_nodes(keywords)
+        if route == "DUAL_PASS_HYBRID":
+            retrieved_context, triples_found, _ = self.planner.execute_dual_pass(user_query)
+        elif route == "GRAPH_METADATA":
+            expanded_keywords = FinancialTermExpander.expand_terms(user_query)
+            seed_nodes = self.retriever.find_entry_point_nodes(expanded_keywords)
             if seed_nodes:
                 triples_found = self.retriever.traverse_subgraph(seed_nodes, max_hops=2)
 
-            # Check zero-result fallback logic
             if not triples_found:
-                print("[Agentic Fallback] Graph traversal returned 0 structural triples. Triggering fallback to Vector/Text Search...")
+                print("[Agentic Fallback] Graph traversal returned 0 structural triples. Triggering fallback to Vector Search...")
                 text_matches = self.retriever.text_lexical_search(user_query)
                 retrieved_context = "RETRIEVED TEXT MATCHES (FALLBACK):\n" + "\n".join(text_matches)
             else:
                 retrieved_context = "RETRIEVED GRAPH SUBGRAPH (MULTI-HOP TRAVERSAL):\n"
                 for s, p, o in triples_found[:50]:
                     retrieved_context += f"<{s}> <{p}> {o.n3()}\n"
-
-        if route == "VECTOR_TEXT" or not retrieved_context:
-            text_matches = self.retriever.text_lexical_search(user_query)
-            retrieved_context = "RETRIEVED LEXICAL TEXT CONTEXT:\n" + "\n".join(text_matches)
+        else:
+            expanded_keywords = FinancialTermExpander.expand_terms(user_query)
+            text_matches = self.retriever.text_lexical_search(" ".join(expanded_keywords))
+            retrieved_context = "RETRIEVED LEXICAL VECTOR CONTEXT WITH FINANCIAL TERM EXPANSION:\n" + "\n".join(text_matches)
 
         # Build grounded prompt with Schema-First Injection
         prompt = f"""
@@ -242,11 +299,11 @@ User Query: "{user_query}"
 
 Instructions:
 1. Ground your answer strictly in the facts from the retrieved grounding context and schema above.
-2. Explicitly cite entity names, URIs, and relationships (e.g. sec:ownsSubsidiary, sec:hasJurisdiction, sec:cik).
-3. If the context does not contain the answer, state that clearly.
+2. If the user prompt asks for structural entities (e.g. subsidiaries, executives), list them clearly.
+3. If the user prompt asks for narrative summaries (e.g. risks, supply chain, lawsuits), summarize the key points.
+4. Explicitly cite entity names, URIs, and relationships (e.g. sec:ownsSubsidiary, sec:hasExecutive, sec:reportsRisk).
 """
 
-        # Call Gemini API if available, else return structured text summary
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             return (
@@ -281,3 +338,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
