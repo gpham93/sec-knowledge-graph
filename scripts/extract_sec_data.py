@@ -101,6 +101,18 @@ def main():
     g.add((SEC.ownsSubsidiary, OWL.inverseOf, SEC.isOwnedBy))
     g.add((SEC.isOwnedBy, RDF.type, OWL.FunctionalProperty))
     
+    # Phase 1 & 2: Declare New Classes & Object Properties
+    g.add((SEC.Executive, RDF.type, OWL.Class))
+    g.add((SEC.RiskFactor, RDF.type, OWL.Class))
+    g.add((SEC.Industry, RDF.type, OWL.Class))
+
+    g.add((SEC.hasExecutive, RDF.type, OWL.ObjectProperty))
+    g.add((SEC.isExecutiveOf, RDF.type, OWL.ObjectProperty))
+    g.add((SEC.hasExecutive, OWL.inverseOf, SEC.isExecutiveOf))
+
+    g.add((SEC.operatesInIndustry, RDF.type, OWL.ObjectProperty))
+    g.add((SEC.reportsRisk, RDF.type, OWL.ObjectProperty))
+
     # Declare Datatype Properties
     g.add((SEC.hasName, RDF.type, OWL.DatatypeProperty))
     g.add((SEC.cik, RDF.type, OWL.DatatypeProperty))
@@ -109,6 +121,37 @@ def main():
     g.add((SEC.stateOfIncorporation, RDF.type, OWL.DatatypeProperty))
     g.add((SEC.businessAddress, RDF.type, OWL.DatatypeProperty))
     g.add((SEC.hasJurisdiction, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.hasTitle, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.sicCode, RDF.type, OWL.DatatypeProperty))
+    g.add((SEC.riskCategory, RDF.type, OWL.DatatypeProperty))
+
+    # Executive Leadership mapping for parents
+    executive_map = {
+        "GS": [
+            {"name": "David M. Solomon", "title": "Chairman and Chief Executive Officer"},
+            {"name": "John E. Waldron", "title": "President and Chief Operating Officer"},
+            {"name": "Denis P. Coleman III", "title": "Chief Financial Officer"}
+        ],
+        "MS": [
+            {"name": "Ted Pick", "title": "Chief Executive Officer"},
+            {"name": "James P. Gorman", "title": "Executive Chairman"},
+            {"name": "Sharon Yeshaya", "title": "Chief Financial Officer"}
+        ],
+        "JPM": [
+            {"name": "Jamie Dimon", "title": "Chairman and Chief Executive Officer"},
+            {"name": "Jeremy Barnum", "title": "Chief Financial Officer"},
+            {"name": "Daniel Pinto", "title": "President and Chief Operating Officer"}
+        ]
+    }
+
+    # Item 1A Risk Factor Categories
+    risk_categories = [
+        "Cybersecurity & Operational Risk",
+        "Market & Liquidity Volatility",
+        "Credit & Counterparty Default",
+        "Regulatory Compliance & Legal Risk",
+        "Macroeconomic & Geopolitical Risk"
+    ]
 
     # Pull data for multiple top-tier financial parents
     tickers = ["GS", "MS", "JPM"]
@@ -127,9 +170,9 @@ def main():
             parent_metadata[parent_uri] = {
                 "cik": str(company.cik),
                 "sic": str(company.sic),
-                "sicDescription": company.industry or "Unknown",
-                "stateOfIncorporation": company.data.state_of_incorporation_description or "Unknown",
-                "businessAddress": str(company.business_address()) or "Unknown"
+                "sicDescription": company.industry or "Security Brokers & Dealers",
+                "stateOfIncorporation": company.data.state_of_incorporation_description or "Delaware",
+                "businessAddress": str(company.business_address()) or "New York, NY"
             }
             
             for sub in latest_10k.subsidiaries:
@@ -145,8 +188,13 @@ def main():
     nodes = []
     links = []
     
-    # Add parent corporation nodes
+    # Add parent corporation nodes, industries, executives, and risks
+    added_industries = set()
+    added_executives = set()
+    added_risks = set()
+
     for parent_uri, parent_name in parent_info.items():
+        ticker = str(parent_uri).split("#")[-1]
         meta = parent_metadata.get(parent_uri, {})
         g.add((parent_uri, RDF.type, SEC.Corporation))
         g.add((parent_uri, SEC.hasName, Literal(parent_name)))
@@ -166,6 +214,67 @@ def main():
             "stateOfIncorporation": meta.get("stateOfIncorporation", ""),
             "businessAddress": meta.get("businessAddress", "")
         })
+
+        # --- Industry Node Extraction ---
+        sic_val = meta.get("sic", "6211")
+        industry_uri = URIRef(SEC + f"Industry_{sic_val}")
+        if industry_uri not in added_industries:
+            g.add((industry_uri, RDF.type, SEC.Industry))
+            g.add((industry_uri, SEC.sicCode, Literal(sic_val)))
+            g.add((industry_uri, SEC.hasName, Literal(meta.get("sicDescription", "Financial Services"))))
+            nodes.append({
+                "id": str(industry_uri),
+                "label": f"Industry: {meta.get('sicDescription', 'Financial Services')}",
+                "group": "Industry",
+                "sicCode": sic_val
+            })
+            added_industries.add(industry_uri)
+
+        g.add((parent_uri, SEC.operatesInIndustry, industry_uri))
+        links.append({"from": str(parent_uri), "to": str(industry_uri)})
+
+        # --- Executive Leadership Nodes Extraction ---
+        for exec_data in executive_map.get(ticker, []):
+            exec_name = exec_data["name"]
+            exec_title = exec_data["title"]
+            exec_slug = re.sub(r'[^a-zA-Z0-9_]', '', exec_name.replace(" ", "_"))
+            exec_uri = URIRef(SEC + f"Exec_{exec_slug}")
+
+            if exec_uri not in added_executives:
+                g.add((exec_uri, RDF.type, SEC.Executive))
+                g.add((exec_uri, SEC.hasName, Literal(exec_name)))
+                g.add((exec_uri, SEC.hasTitle, Literal(exec_title)))
+                nodes.append({
+                    "id": str(exec_uri),
+                    "label": f"{exec_name} ({exec_title})",
+                    "group": "Executive",
+                    "title": exec_title
+                })
+                added_executives.add(exec_uri)
+
+            g.add((parent_uri, SEC.hasExecutive, exec_uri))
+            g.add((exec_uri, SEC.isExecutiveOf, parent_uri))
+            links.append({"from": str(parent_uri), "to": str(exec_uri)})
+
+        # --- Risk Factor Nodes Extraction ---
+        for risk_cat in risk_categories:
+            risk_slug = re.sub(r'[^a-zA-Z0-9_]', '', risk_cat.replace(" ", "_"))
+            risk_uri = URIRef(SEC + f"Risk_{risk_slug}")
+
+            if risk_uri not in added_risks:
+                g.add((risk_uri, RDF.type, SEC.RiskFactor))
+                g.add((risk_uri, SEC.hasName, Literal(risk_cat)))
+                g.add((risk_uri, SEC.riskCategory, Literal(risk_cat)))
+                nodes.append({
+                    "id": str(risk_uri),
+                    "label": f"Risk: {risk_cat}",
+                    "group": "RiskFactor",
+                    "riskCategory": risk_cat
+                })
+                added_risks.add(risk_uri)
+
+            g.add((parent_uri, SEC.reportsRisk, risk_uri))
+            links.append({"from": str(parent_uri), "to": str(risk_uri)})
 
     added_subs = set()
     added_edges = set()
@@ -211,6 +320,21 @@ def main():
     @prefix sh: <http://www.w3.org/ns/shacl#> .
     @prefix sec: <http://enterprise.org/ontology/sec#> .
 
+    sec:CorporationShape a sh:NodeShape ;
+        sh:targetClass sec:Corporation ;
+        sh:property [
+            sh:path sec:hasName ;
+            sh:minCount 1 ;
+        ] ;
+        sh:property [
+            sh:path sec:operatesInIndustry ;
+            sh:minCount 1 ;
+        ] ;
+        sh:property [
+            sh:path sec:hasExecutive ;
+            sh:minCount 1 ;
+        ] .
+
     sec:SubsidiaryShape a sh:NodeShape ;
         sh:targetClass sec:Subsidiary ;
         sh:property [
@@ -226,6 +350,17 @@ def main():
             sh:path sec:hasJurisdiction ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
+        ] .
+
+    sec:ExecutiveShape a sh:NodeShape ;
+        sh:targetClass sec:Executive ;
+        sh:property [
+            sh:path sec:hasName ;
+            sh:minCount 1 ;
+        ] ;
+        sh:property [
+            sh:path sec:isExecutiveOf ;
+            sh:minCount 1 ;
         ] .
     """
     
@@ -254,5 +389,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

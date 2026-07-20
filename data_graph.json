@@ -11,6 +11,60 @@
       "businessAddress": "200 WEST STREET\nNEW YORK, NY 10282"
     },
     {
+      "id": "http://enterprise.org/ontology/sec#Industry_6211",
+      "label": "Industry: Security Brokers, Dealers & Flotation Companies",
+      "group": "Industry",
+      "sicCode": "6211"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_David_M_Solomon",
+      "label": "David M. Solomon (Chairman and Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chairman and Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_John_E_Waldron",
+      "label": "John E. Waldron (President and Chief Operating Officer)",
+      "group": "Executive",
+      "title": "President and Chief Operating Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Denis_P_Coleman_III",
+      "label": "Denis P. Coleman III (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk",
+      "label": "Risk: Cybersecurity & Operational Risk",
+      "group": "RiskFactor",
+      "riskCategory": "Cybersecurity & Operational Risk"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility",
+      "label": "Risk: Market & Liquidity Volatility",
+      "group": "RiskFactor",
+      "riskCategory": "Market & Liquidity Volatility"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default",
+      "label": "Risk: Credit & Counterparty Default",
+      "group": "RiskFactor",
+      "riskCategory": "Credit & Counterparty Default"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk",
+      "label": "Risk: Regulatory Compliance & Legal Risk",
+      "group": "RiskFactor",
+      "riskCategory": "Regulatory Compliance & Legal Risk"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk",
+      "label": "Risk: Macroeconomic & Geopolitical Risk",
+      "group": "RiskFactor",
+      "riskCategory": "Macroeconomic & Geopolitical Risk"
+    },
+    {
       "id": "http://enterprise.org/ontology/sec#MS",
       "label": "MORGAN STANLEY",
       "group": "Corporation",
@@ -21,6 +75,24 @@
       "businessAddress": "1585 BROADWAY\nNEW YORK, NY 10036"
     },
     {
+      "id": "http://enterprise.org/ontology/sec#Exec_Ted_Pick",
+      "label": "Ted Pick (Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman",
+      "label": "James P. Gorman (Executive Chairman)",
+      "group": "Executive",
+      "title": "Executive Chairman"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya",
+      "label": "Sharon Yeshaya (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
+    },
+    {
       "id": "http://enterprise.org/ontology/sec#JPM",
       "label": "JPMORGAN CHASE & CO",
       "group": "Corporation",
@@ -29,6 +101,30 @@
       "sicDescription": "National Commercial Banks",
       "stateOfIncorporation": "DE",
       "businessAddress": "270 PARK AVENUE\nNEW YORK, NY 10017"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Industry_6021",
+      "label": "Industry: National Commercial Banks",
+      "group": "Industry",
+      "sicCode": "6021"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Jamie_Dimon",
+      "label": "Jamie Dimon (Chairman and Chief Executive Officer)",
+      "group": "Executive",
+      "title": "Chairman and Chief Executive Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Jeremy_Barnum",
+      "label": "Jeremy Barnum (Chief Financial Officer)",
+      "group": "Executive",
+      "title": "Chief Financial Officer"
+    },
+    {
+      "id": "http://enterprise.org/ontology/sec#Exec_Daniel_Pinto",
+      "label": "Daniel Pinto (President and Chief Operating Officer)",
+      "group": "Executive",
+      "title": "President and Chief Operating Officer"
     },
     {
       "id": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc",
@@ -542,6 +638,114 @@
     }
   ],
   "edges": [
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Industry_6211"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Exec_David_M_Solomon"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Exec_John_E_Waldron"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Exec_Denis_P_Coleman_III"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#GS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Industry_6211"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_Ted_Pick"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_James_P_Gorman"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Exec_Sharon_Yeshaya"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#MS",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Industry_6021"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Exec_Jamie_Dimon"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Exec_Jeremy_Barnum"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Exec_Daniel_Pinto"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Cybersecurity__Operational_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Market__Liquidity_Volatility"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Credit__Counterparty_Default"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Regulatory_Compliance__Legal_Risk"
+    },
+    {
+      "from": "http://enterprise.org/ontology/sec#JPM",
+      "to": "http://enterprise.org/ontology/sec#Risk_Macroeconomic__Geopolitical_Risk"
+    },
     {
       "from": "http://enterprise.org/ontology/sec#GS",
       "to": "http://enterprise.org/ontology/sec#The_Goldman_Sachs_Group_Inc"

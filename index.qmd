@@ -20,6 +20,9 @@ Explore the extracted corporate structure of Goldman Sachs and its subsidiaries.
 ### Goldman Sachs Group Inc. & Subsidiaries
 <div class="mb-3">
   <span class="badge-custom badge-corp">Corporation</span>
+  <span class="badge-custom badge-exec">Executive</span>
+  <span class="badge-custom badge-ind">Industry</span>
+  <span class="badge-custom badge-risk">Risk Factor</span>
   <span class="badge-custom badge-sub">Subsidiary</span>
 </div>
 
@@ -41,27 +44,35 @@ document.addEventListener("DOMContentLoaded", function() {
   
   const textColor = isDark ? '#e2e8f0' : '#1e293b';
   
+  const colorMap = {
+    'Corporation': { bg: '#e5c158', border: '#d4af37', size: 28 },
+    'Executive': { bg: '#9d4edd', border: '#7b2cbf', size: 20 },
+    'Industry': { bg: '#2ec4b6', border: '#0f9f90', size: 22 },
+    'RiskFactor': { bg: '#e63946', border: '#d62828', size: 18 },
+    'Subsidiary': { bg: '#00b4d8', border: '#0077b6', size: 16 }
+  };
+
   fetch('data_graph.json')
     .then(response => response.json())
     .then(data => {
       // Style the nodes dynamically based on group
       const styledNodes = data.nodes.map(node => {
-        const isCorp = node.group === 'Corporation';
+        const style = colorMap[node.group] || colorMap['Subsidiary'];
         return {
-          ...node, // Preserve CIK, SIC, stateOfIncorporation, businessAddress, jurisdiction, etc.
+          ...node, // Preserve CIK, SIC, executive title, risk category, jurisdiction, etc.
           shape: 'dot',
-          size: isCorp ? 28 : 16,
+          size: style.size,
           color: {
-            background: isCorp ? '#e5c158' : '#00b4d8',
-            border: isCorp ? '#d4af37' : '#0077b6',
+            background: style.bg,
+            border: style.border,
             highlight: {
-              background: isCorp ? '#f4d068' : '#90e0ef',
-              border: isCorp ? '#e5c158' : '#00b4d8'
+              background: style.bg,
+              border: '#ffffff'
             }
           },
           font: {
             color: textColor,
-            size: isCorp ? 15 : 12,
+            size: node.group === 'Corporation' ? 15 : 12,
             face: 'Outfit, sans-serif'
           },
           borderWidth: 2
@@ -132,6 +143,18 @@ document.addEventListener("DOMContentLoaded", function() {
               <strong>SIC Code:</strong> ${nodeData.sic || 'Unknown'} (${nodeData.sicDescription || 'Unknown'})<br>
               <strong>Incorporated In:</strong> ${nodeData.stateOfIncorporation || 'Unknown'}<br>
               <strong>Business Address:</strong> ${formattedAddress}
+            `;
+          } else if (nodeData.group === 'Executive') {
+            detailsHtml += `
+              <strong>Executive Title:</strong> ${nodeData.title || 'Executive Officer'}
+            `;
+          } else if (nodeData.group === 'Industry') {
+            detailsHtml += `
+              <strong>SIC Classification Code:</strong> ${nodeData.sicCode || 'Unknown'}
+            `;
+          } else if (nodeData.group === 'RiskFactor') {
+            detailsHtml += `
+              <strong>Item 1A Risk Profile:</strong> ${nodeData.riskCategory || 'Operational Risk'}
             `;
           } else {
             detailsHtml += `
