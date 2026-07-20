@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 🤖 Live Graph RAG Chatbot
 Ask questions about the corporate hierarchies directly in your browser. This chat interface extracts facts from the knowledge graph and grounds Gemini's answers in real time.
 
+```{=html}
 <div class="chat-card mb-4" style="padding: 0; overflow: hidden;">
   <div class="chat-container">
     <div class="chat-header">
@@ -191,6 +192,7 @@ Ask questions about the corporate hierarchies directly in your browser. This cha
   <button type="button" class="chip" data-prompt="Are there any duplicate or clustered subsidiaries?">Deduplication Info</button>
   <button type="button" class="chip" data-prompt="What is Goldman Sachs' business address?">GS Address</button>
 </div>
+```
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
